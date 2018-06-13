@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<FormStructure AlertDataPath="/net/hedtech/banner/general/necc/general/Gjapctl/GjapctlAlerts.xml" FirstNavigationBlock="KEY_BLOCK" LovDataPath="/net/hedtech/banner/general/necc/general/Gjapctl/GjapctlLovs.xml" Name="GJAPCTL">
+    <Visual/>
+    <Logic>
+        <Block Id="KEY_BLOCK">
+            <Item Id="KEYBLCK_JOB"/>
+        </Block>
+        <Block Id="SUBMIT_BLK"/>
+    </Logic>
+</FormStructure>

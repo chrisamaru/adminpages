@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:formmodel"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:formmodel http://www.morphis-tech.com/schema/foundations/formmodel.xsd">
+	
+	
+	<formModel id="GJAPCTL.Model.Config" name="GJAPCTL">
+		<modelClass>net.hedtech.banner.general.necc.general.Gjapctl.model.GjapctlModel</modelClass>
+		<parameters>
+		</parameters>
+		<businessObjects>
+		</businessObjects>
+		<valueSets>
+		</valueSets>
+	</formModel>
+</b:beans>

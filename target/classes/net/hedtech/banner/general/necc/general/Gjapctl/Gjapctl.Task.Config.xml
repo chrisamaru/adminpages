@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:task"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:task http://www.morphis-tech.com/schema/foundations/task.xsd">
+	
+	<!-- model definition -->
+	<b:import resource="classpath:/net/hedtech/banner/general/necc/general/Gjapctl/model/GJAPCTL.Model.Config.xml"/>
+	<!-- extension -->
+	<b:import resource="classpath:/net/hedtech/banner/general/Gjapctl/Gjapctl.Task.Config.xml"/>
+	
+	<task id="GJAPCTL.Task.Config" name="GJAPCTL">
+		<extension>GWAPCTL</extension>
+		
+		<taskClass>net.hedtech.banner.general.necc.general.Gjapctl.GjapctlTask</taskClass>		
+		<!-- struct -->
+		<taskResources>/net/hedtech/banner/general/necc/general/Gjapctl/GjapctlStruct.xml</taskResources>
+		
+		<!-- support code -->
+		<supportCodeConfiguration>
+			<services>net.hedtech.banner.general.necc.general.Gjapctl.services.GjapctlServices</services>
+		</supportCodeConfiguration>
+		
+		<!-- model -->
+		<formModelConfiguration config="GJAPCTL.Model.Config"/>
+		
+		<formController>net.hedtech.banner.general.necc.general.Gjapctl.controller.GjapctlFormController</formController>
+		<blockControllers>
+			<block name="KEY_BLOCK">net.hedtech.banner.general.necc.general.Gjapctl.controller.KeyBlockController</block>
+			<block name="SUBMIT_BLK">net.hedtech.banner.general.necc.general.Gjapctl.controller.SubmitBlkController</block>
+		</blockControllers>
+	</task>
+</b:beans>
