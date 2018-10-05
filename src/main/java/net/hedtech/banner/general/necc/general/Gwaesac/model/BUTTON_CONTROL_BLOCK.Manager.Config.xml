@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:businessobject"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
+	<manager id="BUTTON_CONTROL_BLOCK.Manager.Config" name="BUTTON_CONTROL_BLOCK">
+		<kind>SimpleBusinessObject</kind>
+		<items>
+			<item name="CHECK_KEYS" logicalName="checkKeys" type="String">
+			</item>
+		</items>
+
+		<managerClass>net.hedtech.banner.general.necc.general.Gwaesac.model.ButtonControlBlock</managerClass>
+	</manager>
+</b:beans>

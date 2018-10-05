@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<FormStructure AlertDataPath="/net/hedtech/banner/general/necc/general/Gwaesac/GwaesacAlerts.xml" FirstNavigationBlock="KEY_BLOCK" LovDataPath="/net/hedtech/banner/general/necc/general/Gwaesac/GwaesacLovs.xml" Name="GWAESAC">
+    <Visual>
+        <Window Id="MAIN_WINDOW" Url="net/hedtech/banner/general/necc/general/Gwaesac/views/ViewMainWindow">
+            <StackedCanvas Id="MAIN_CANVAS"/>
+            <ContentCanvas Id="KEY_BLOCK_CANVAS"/>
+            <StackedCanvas Id="G$_WELCOME_CANVAS" Visible="false"/>
+        </Window>
+    </Visual>
+    <Logic>
+        <Block Id="BUTTON_CONTROL_BLOCK">
+            <Item DataType="String" Id="CHECK_KEYS" Type="TextItem"/>
+			<Item CanvasName="KEY_BLOCK_CANVAS" Id="ID_LBT" MaxLength="0" Navigable="false" Type="Button"/>
+        </Block>
+        <Block Id="FORM_HEADER">
+            <Item DataType="String" Id="CURRENT_FORM" Type="TextItem"/>
+            <Item DataType="String" Id="CURRENT_RELEASE" Type="TextItem"/>
+            <Item DataType="String" Id="CURRENT_INSTITUTION" Type="TextItem"/>
+            <Item DataType="String" Id="CURRENT_TIME" Type="TextItem"/>
+            <Item DataType="String" Id="CURRENT_DATE" Type="TextItem"/>
+            <Item DataType="String" Id="HEADER_FLAG" Type="TextItem"/>
+            <Item DataType="String" Id="WORKFLD" Type="TextItem"/>
+            <Item DataType="String" Id="WORKDATE" Type="TextItem"/>
+        </Block>
+        <Block Id="KEY_BLOCK">
+            <Item CanvasName="KEY_BLOCK_CANVAS" Id="ID" Type="TextItem"/>
+            <Item AllowSearch="false" CanvasName="KEY_BLOCK_CANVAS" Enabled="false" Id="FULL_NAME" Navigable="false" Type="TextItem"/>
+            <Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="KEY_BLOCK_CANVAS" DataType="Number" Id="PIDM" MaxLength="8" Navigable="false" Type="TextItem"/>
+            <Item CanvasName="KEY_BLOCK_CANVAS" Id="EXECUTE_BTN" Type="Button"/>
+            <Item CanvasName="KEY_BLOCK_CANVAS" Id="KEY-CLRFRM_BTN" Type="Button" Visible="false"/>
+        </Block>
+        <Block Id="GWBESAC">
+            <Item CanvasName="MAIN_CANVAS" Id="GWBESAC_PIDM" Type="TextItem"/>
+            <Item CanvasName="MAIN_CANVAS" Id="GWBESAC_STAFF_IND" Type="TextItem"/>
+            <Item CanvasName="MAIN_CANVAS" Id="GWBESAC_DW_ACCESS" Type="TextItem"/>
+            <Item CanvasName="MAIN_CANVAS" Id="GWBESAC_DW_ENABLED_IND" Type="TextItem"/>
+            <Item CanvasName="MAIN_CANVAS" Id="GWBESAC_EAB_ENABLED_IND" Type="TextItem"/>
+            <Item CanvasName="MAIN_CANVAS" Id="GWBESAC_ACTIVITY_DATE" Type="TextItem"/>
+            <Item CanvasName="MAIN_CANVAS" Id="GWBESAC_USER" Type="TextItem"/>
+        </Block>
+    </Logic>
+</FormStructure>

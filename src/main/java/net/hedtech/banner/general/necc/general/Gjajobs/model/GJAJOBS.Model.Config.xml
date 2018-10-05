@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:formmodel"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:formmodel http://www.morphis-tech.com/schema/foundations/formmodel.xsd">
+	
+	<b:import resource="classpath:/net/hedtech/banner/general/necc/general/Gjajobs/model/GJAJOBS.ValueSet.Config.xml"/>
+	
+	<formModel id="GJAJOBS.Model.Config" name="GJAJOBS">
+		<modelClass>net.hedtech.banner.general.necc.general.Gjajobs.model.GjajobsModel</modelClass>
+		<parameters>
+		</parameters>
+		<businessObjects>
+		</businessObjects>
+		<valueSets>
+			<valueSet config="GJBJOBS__GJBJOBS_JOB_TYPE_IND_RG.ValueSet.Config"/>
+		</valueSets>
+	</formModel>
+</b:beans>

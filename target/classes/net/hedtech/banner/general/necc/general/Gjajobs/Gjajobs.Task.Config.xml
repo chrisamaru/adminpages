@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:task"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:task http://www.morphis-tech.com/schema/foundations/task.xsd">
+	
+	<!-- model definition -->
+	<b:import resource="classpath:/net/hedtech/banner/general/necc/general/Gjajobs/model/GJAJOBS.Model.Config.xml"/>
+	<!-- extension -->
+	<b:import resource="classpath:/net/hedtech/banner/general/Gjajobs/Gjajobs.Task.Config.xml"/>
+	
+	<task id="GJAJOBS.Task.Config" name="GJAJOBS">
+		<extension>GJAJOBS</extension>
+		
+		<taskClass>net.hedtech.banner.general.necc.general.Gjajobs.GjajobsTask</taskClass>		
+		<!-- struct -->
+		<taskResources>/net/hedtech/banner/general/necc/general/Gjajobs/GjajobsStruct.xml</taskResources>
+		
+		<!-- support code -->
+		<supportCodeConfiguration>
+			<services>net.hedtech.banner.general.necc.general.Gjajobs.services.GjajobsServices</services>
+		</supportCodeConfiguration>
+		
+		<!-- model -->
+		<formModelConfiguration config="GJAJOBS.Model.Config"/>
+		
+		<formController>net.hedtech.banner.general.necc.general.Gjajobs.controller.GjajobsFormController</formController>
+	</task>
+</b:beans>

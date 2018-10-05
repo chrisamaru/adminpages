@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:businessobject"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
+	<manager id="FORM_HEADER.Manager.Config" name="FORM_HEADER">
+		<kind>SimpleBusinessObject</kind>
+		<items>
+			<item name="CURRENT_FORM" logicalName="currentForm" type="String">
+			</item>
+			<item name="CURRENT_RELEASE" logicalName="currentRelease" type="String">
+			</item>
+			<item name="CURRENT_INSTITUTION" logicalName="currentInstitution" type="String">
+			</item>
+			<item name="CURRENT_TIME" logicalName="currentTime" type="String">
+			</item>
+			<item name="CURRENT_DATE" logicalName="currentDate" type="String">
+			</item>
+			<item name="HEADER_FLAG" logicalName="headerFlag" type="String">
+			</item>
+			<item name="WORKFLD" logicalName="workfld" type="String">
+			</item>
+			<item name="WORKDATE" logicalName="workdate" type="String">
+			</item>
+		</items>
+
+		<managerClass>net.hedtech.banner.general.necc.general.Gwaesac.model.FormHeader</managerClass>
+	</manager>
+</b:beans>

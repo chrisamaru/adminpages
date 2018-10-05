@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:task"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:task http://www.morphis-tech.com/schema/foundations/task.xsd">
+	
+	<!-- base task definition -->
+	<b:import resource="classpath:/net/hedtech/general/common/forms/Base.Task.Config.xml"/>
+	<!-- task parts -->
+	<b:import resource="classpath:/net/hedtech/general/common/libraries/Goqolib/Goqolib.TaskPart.Config.xml"/>
+	<!-- library resources -->
+	<b:import resource="classpath:/net/hedtech/general/common/libraries/Goqrpls/GOQRPLS.Library.Config.xml"/>
+	<b:import resource="classpath:/net/hedtech/general/common/libraries/Soqrpls/SOQRPLS.Library.Config.xml"/>
+	<!-- model definition -->
+	<b:import resource="classpath:/net/hedtech/banner/general/necc/general/Gwaesac/model/GWAESAC.Model.Config.xml"/>
+	
+	<task id="GWAESAC.Task.Config" name="GWAESAC">
+		<baseTaskConfiguration config="BASE.Task.Config"/>		
+		<taskParts>
+			<taskPartConfiguration name="GOQOLIB" config="GOQOLIB.TaskPart.Config"/>
+		</taskParts>
+		<taskClass>net.hedtech.banner.general.necc.general.Gwaesac.GwaesacTask</taskClass>		
+		<!-- struct -->
+		<taskResources>/net/hedtech/banner/general/necc/general/Gwaesac/GwaesacStruct.xml</taskResources>
+		
+		<!-- support code -->
+		<supportCodeConfiguration>
+			<services>net.hedtech.banner.general.necc.general.Gwaesac.services.GwaesacServices</services>
+			<attachedLibraries>
+				<libraryConfiguration config="GOQRPLS.Lib.Config"/>
+				<libraryConfiguration config="SOQRPLS.Lib.Config"/>
+			</attachedLibraries>
+		</supportCodeConfiguration>
+		
+		<!-- model -->
+		<formModelConfiguration config="GWAESAC.Model.Config"/>
+		
+		<formController>net.hedtech.banner.general.necc.general.Gwaesac.controller.GwaesacFormController</formController>
+		<blockControllers>
+			<block name="GWBESAC">net.hedtech.banner.general.necc.general.Gwaesac.controller.GwbesacController</block>
+			<block name="G$_EXTENDED_SEARCH_BLOCK">net.hedtech.banner.general.necc.general.Gwaesac.controller.GExtendedSearchBlockController</block>
+			<block name="BUTTON_CONTROL_BLOCK">net.hedtech.banner.general.necc.general.Gwaesac.controller.ButtonControlBlockController</block>
+			<block name="KEY_BLOCK">net.hedtech.banner.general.necc.general.Gwaesac.controller.KeyBlockController</block>
+			<block name="FORM_HEADER">net.hedtech.banner.general.necc.general.Gwaesac.controller.FormHeaderController</block>
+		</blockControllers>
+	</task>
+</b:beans>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<im:information xmlns:im="urn:schemas:morphis:frames:infomap" xmlns:ns0="urn:schemas:morphis:frames:config">
+   <im:locales>
+      <ns0:locale language="en">
+         <file href="net/hedtech/banner/general/necc/general/Gwaesac/views/locales/en.properties"/>
+         <file href="net/hedtech/general/common/libraries/Goqolib/views/locales/en.properties"/>
+      </ns0:locale>
+      <ns0:locale language="ar-EG">
+         <file href="net/hedtech/general/common/libraries/Goqolib/views/locales/ar-EG.properties"/>
+      </ns0:locale>
+      <ns0:locale language="ar">
+         <file href="net/hedtech/general/common/libraries/Goqolib/views/locales/ar.properties"/>
+      </ns0:locale>
+      <ns0:locale language="en_AU">
+         <file href="net/hedtech/general/common/libraries/Goqolib/views/locales/en_AU.properties"/>
+      </ns0:locale>
+      <ns0:locale language="en_GB">
+         <file href="net/hedtech/general/common/libraries/Goqolib/views/locales/en_GB.properties"/>
+      </ns0:locale>
+      <ns0:locale language="en_IE">
+         <file href="net/hedtech/general/common/libraries/Goqolib/views/locales/en_IE.properties"/>
+      </ns0:locale>
+      <ns0:locale language="en_IN">
+         <file href="net/hedtech/general/common/libraries/Goqolib/views/locales/en_IN.properties"/>
+      </ns0:locale>
+      <ns0:locale language="es">
+         <file href="net/hedtech/general/common/libraries/Goqolib/views/locales/es.properties"/>
+      </ns0:locale>
+      <ns0:locale language="fr">
+         <file href="net/hedtech/general/common/libraries/Goqolib/views/locales/fr.properties"/>
+      </ns0:locale>
+      <ns0:locale language="fr_CA">
+         <file href="net/hedtech/general/common/libraries/Goqolib/views/locales/fr_CA.properties"/>
+      </ns0:locale>
+      <ns0:locale language="pt">
+         <file href="net/hedtech/general/common/libraries/Goqolib/views/locales/pt.properties"/>
+      </ns0:locale>
+   </im:locales>
+</im:information>

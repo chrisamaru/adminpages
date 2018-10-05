@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:businessobject"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
+	<manager id="GWBESAC.Manager.Config" name="GWBESAC">
+		<items>
+			<item name="GWBESAC_PIDM" logicalName="gwbesacPidm" type="java.math.BigDecimal" physicalName="GWBESAC_PIDM">
+				<value>
+					<item name="PIDM" businessObject="KEY_BLOCK"/>
+				</value>
+			</item>
+			<item name="GWBESAC_STAFF_IND" logicalName="gwbesacStaffInd" type="String" physicalName="GWBESAC_STAFF_IND">
+			</item>
+			<item name="GWBESAC_DW_ACCESS" logicalName="gwbesacDwAccess" type="String" physicalName="GWBESAC_DW_ACCESS">
+			</item>
+			<item name="GWBESAC_DW_ENABLED_IND" logicalName="gwbesacDwEnabledInd" type="String" physicalName="GWBESAC_DW_ENABLED_IND">
+			</item>
+			<item name="GWBESAC_EAB_ENABLED_IND" logicalName="gwbesacEabEnabledInd" type="String" physicalName="GWBESAC_EAB_ENABLED_IND">
+			</item>
+			<item name="GWBESAC_ACTIVITY_DATE" logicalName="gwbesacActivityDate" type="java.util.Date" physicalName="GWBESAC_ACTIVITY_DATE">
+			</item>
+			<item name="GWBESAC_USER" logicalName="gwbesacUser" type="String" physicalName="GWBESAC_USER">
+			</item>
+		</items>
+		
+		<adapterClass>net.hedtech.banner.general.necc.general.Gwaesac.model.GwbesacAdapter</adapterClass>
+		<!-- DefaultWhereClause needs completion on user end: -->
+		<defaultWhereClause><![CDATA[where gwbesac_pidm = :PIDM]]></defaultWhereClause>
+		
+	</manager>
+</b:beans>

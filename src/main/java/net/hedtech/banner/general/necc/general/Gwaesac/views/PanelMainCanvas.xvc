@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config layout="horizontal" xmlns="urn:schemas:morphis:frames:view" xmlns:xl="urn:schemas:morphis:frames:logic">
+	<interactionBlock name="GWBESAC" />
+	<panel id="MAIN_CANVAS" name="MAIN_CANVAS" width="100%"  class="StackedCanvas">
+		<collapsiblepanel label="mainWindow.title" name="rect47" width="100%">
+			<panel width="100%">
+				<gridlayout cols="2" orientation="vertical">
+					<gridcell>
+						<textbox name="gwbesacStaffInd" width="50px" height="22px" label="Staff Ind" maxlength="1" block="GWBESAC" member="GWBESAC_STAFF_IND" datatype="String"   />
+					</gridcell>
+					<gridcell>
+						<textbox name="gwbesacDwAccess" width="112px" height="22px" label="Degreeworks Access" maxlength="16" block="GWBESAC" member="GWBESAC_DW_ACCESS" datatype="String"   />
+					</gridcell>
+					<gridcell>
+						<textbox name="gwbesacDwEnabledInd" width="50px" height="22px" label="Degreeworks Enabled?" maxlength="1" block="GWBESAC" member="GWBESAC_DW_ENABLED_IND" datatype="String"   />
+					</gridcell>
+					<gridcell>
+						<textbox name="gwbesacEabEnabledInd" width="50px" height="22px" label="EAB Enabled?" maxlength="1" block="GWBESAC" member="GWBESAC_EAB_ENABLED_IND" datatype="String"   />
+					</gridcell>
+					<gridcell>
+						<calendar name="gwbesacActivityDate" width="50" height="22px" label="Activity Date" block="GWBESAC" member="GWBESAC_ACTIVITY_DATE" datatype="Date"   />
+					</gridcell>
+					<gridcell>
+						<textbox name="gwbesacUser" width="245px" height="22px" label="User" maxlength="35" block="GWBESAC" member="GWBESAC_USER" datatype="String"   />
+					</gridcell>
+				</gridlayout>
+			</panel>
+		</collapsiblepanel>
+	</panel>
+</config>

@@ -1,0 +1,100 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>{{#i18n}}"External Services Access Control"{{/i18n}}</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+							$(document).ready(function()
+							{
+								Frames.init({"KEY_BLOCK": {},"BUTTON_CONTROL_BLOCK": {},});
+							});
+						</script>
+    <div class="ui-view-window ui-layout-horizontal">
+      <!--BEGIN:net/hedtech/banner/general/necc/general/Gwaesac/views/PanelKeyBlockCanvas.xvc-->
+      <div data-widget="panel" id="KEY_BLOCK_CANVAS" data-name="KEY_BLOCK_CANVAS" data-class="contentcanvas" class="ui-widget ui-panel keyblock" style="width: 100%; ">
+        <div class="ui-layout-gridflow ui-layout-responsive">
+          <div class="layout-row">
+            <div class="ui-layout-responsive layout-col layout-col-3 ui-layout-horizontal">
+              <div data-widget="component" class="ui-layout-horizontal">
+                <label style=""></label>
+                <div data-widget="textinput" data-member="ID" data-block="KEY_BLOCK" data-type="String" data-validation="server" data-keyactions="NEXT_ITEM" class="ui-widget ui-textinput ui-label-position-left ui-label-align-start ui-buttoninput" data-eventdoubleclick="WHEN-MOUSE-DOUBLECLICK" id="KEY_BLOCK_CANVAS_id" data-name="id" data-maxlength="9" data-autoskip="true" data-case="upper">
+                  <label for="#id" style="">{{#i18n}}"ID"{{/i18n}}</label><input type="text" id="#id" name="id" style="height: 23px; " class="ui-widget-content ui-corner-all">
+                </div>
+                <button type="button" data-widget="button" data-member="ID_LBT" data-block="BUTTON_CONTROL_BLOCK" data-action="WHEN-BUTTON-PRESSED" class="ui-widget ui-button ui-buttoninput" data-eventclick="WHEN-MOUSE-CLICK" data-icon="flashlit" id="KEY_BLOCK_CANVAS_idLbt" data-name="idLbt" data-tooltip="{{#i18n}}&quot;Search&quot;{{/i18n}}" style="height: 23px; width: 20px; "></button>
+                <div data-widget="textinput" data-member="FULL_NAME" data-block="KEY_BLOCK" data-type="String" id="KEY_BLOCK_CANVAS_fullName" data-name="fullName" class="ui-widget ui-textinput ui-label-position-left ui-label-align-start" data-maxlength="64">
+                  <label for="#fullName" style=""></label><input type="text" id="#fullName" name="fullName" style="height: 22px; width: 256px; text-align: left;" class="ui-widget-content ui-corner-all">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-widget="panel" class="ui-layout-horizontal keyblock-button-container">
+        <button type="button" data-widget="button" data-member="EXECUTE_BTN" data-block="KEY_BLOCK" data-action="NEXT_BLOCK" data-tooltip="{{#i18n}}&quot;keyBlock.executeBtn.tooltip&quot;{{/i18n}}" class="ui-widget ui-button">{{#i18n}}"keyBlock.executeBtn.label"{{/i18n}}</button><button type="button" data-widget="button" data-member="KEY-CLRFRM_BTN" data-block="KEY_BLOCK" data-action="CLEAR-FORM" data-tooltip="{{#i18n}}&quot;keyBlock.keyClrfrmBtn.tooltip&quot;{{/i18n}}" class="ui-widget ui-button" style="display: none; ">{{#i18n}}"keyBlock.keyClrfrmBtn.label"{{/i18n}}</button>
+      </div>
+      <!--END:net/hedtech/banner/general/necc/general/Gwaesac/views/PanelKeyBlockCanvas.xvc-->
+      <div data-widget="tabpanel" class="ui-widget ui-tabpanel ui-panel-view-container ui-notabs" style="width: 100%; ">
+        <ul>
+          <li>
+            <a href="#-">{{#i18n}}"main"{{/i18n}}</a>
+          </li>
+        </ul>
+        <div id="-" data-name="" class="ui-layout-horizontal">
+          <!--BEGIN:net/hedtech/banner/general/necc/general/Gwaesac/views/PanelMainCanvas.xvc-->
+          <div data-widget="panel" id="MAIN_CANVAS" data-name="MAIN_CANVAS" data-class="stackedcanvas" class="ui-layout-horizontal" style="width: 100%; ">
+            <div data-widget="collapsiblepanel" id="rect47" data-name="rect47" class="ui-widget ui-collapsiblepanel" style="width: 100%; ">
+              <h3>{{#i18n}}"mainWindow.title"{{/i18n}}</h3>
+              <div class="ui-collapsiblepanel-content ui-layout-horizontal">
+                <div data-widget="panel" class="ui-widget ui-panel" style="width: 100%; ">
+                  <table role="presentation" data-cols="2" class="ui-layout-grid" data-direction="column">
+                    <tr>
+                      <td class="ui-layout-cell ui-layout-horizontal">
+                        <div data-widget="textinput" data-member="GWBESAC_STAFF_IND" data-block="GWBESAC" data-type="String" id="gwbesacStaffInd" data-name="gwbesacStaffInd" class="ui-widget ui-textinput ui-label-position-left ui-label-align-start" data-maxlength="1">
+                          <label for="#gwbesacStaffInd" style="">{{#i18n}}"Staff Ind"{{/i18n}}</label><input type="text" id="#gwbesacStaffInd" name="gwbesacStaffInd" style="height: 22px; width: 50px; " class="ui-widget-content ui-corner-all">
+                        </div>
+                      </td><td class="ui-layout-cell ui-layout-horizontal">
+                        <div data-widget="textinput" data-member="GWBESAC_EAB_ENABLED_IND" data-block="GWBESAC" data-type="String" id="gwbesacEabEnabledInd" data-name="gwbesacEabEnabledInd" class="ui-widget ui-textinput ui-label-position-left ui-label-align-start" data-maxlength="1">
+                          <label for="#gwbesacEabEnabledInd" style="">{{#i18n}}"EAB Enabled?"{{/i18n}}</label><input type="text" id="#gwbesacEabEnabledInd" name="gwbesacEabEnabledInd" style="height: 22px; width: 50px; " class="ui-widget-content ui-corner-all">
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="ui-layout-cell ui-layout-horizontal">
+                        <div data-widget="textinput" data-member="GWBESAC_DW_ACCESS" data-block="GWBESAC" data-type="String" id="gwbesacDwAccess" data-name="gwbesacDwAccess" class="ui-widget ui-textinput ui-label-position-left ui-label-align-start" data-maxlength="16">
+                          <label for="#gwbesacDwAccess" style="">{{#i18n}}"Degreeworks Access"{{/i18n}}</label><input type="text" id="#gwbesacDwAccess" name="gwbesacDwAccess" style="height: 22px; width: 112px; " class="ui-widget-content ui-corner-all">
+                        </div>
+                      </td><td class="ui-layout-cell ui-layout-horizontal">
+                        <div data-widget="datefield" data-member="GWBESAC_ACTIVITY_DATE" data-block="GWBESAC" data-type="Date" id="gwbesacActivityDate" data-name="gwbesacActivityDate" class="ui-widget ui-calendar ui-label-position-left ui-label-align-start">
+                          <label for="#gwbesacActivityDate" style="">{{#i18n}}"Activity Date"{{/i18n}}</label><input id="#gwbesacActivityDate" name="gwbesacActivityDate" style="height: 22px; width: 50; " class="ui-widget-content ui-corner-all">
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="ui-layout-cell ui-layout-horizontal">
+                        <div data-widget="textinput" data-member="GWBESAC_DW_ENABLED_IND" data-block="GWBESAC" data-type="String" id="gwbesacDwEnabledInd" data-name="gwbesacDwEnabledInd" class="ui-widget ui-textinput ui-label-position-left ui-label-align-start" data-maxlength="1">
+                          <label for="#gwbesacDwEnabledInd" style="">{{#i18n}}"Degreeworks Enabled?"{{/i18n}}</label><input type="text" id="#gwbesacDwEnabledInd" name="gwbesacDwEnabledInd" style="height: 22px; width: 50px; " class="ui-widget-content ui-corner-all">
+                        </div>
+                      </td><td class="ui-layout-cell ui-layout-horizontal">
+                        <div data-widget="textinput" data-member="GWBESAC_USER" data-block="GWBESAC" data-type="String" id="gwbesacUser" data-name="gwbesacUser" class="ui-widget ui-textinput ui-label-position-left ui-label-align-start" data-maxlength="35">
+                          <label for="#gwbesacUser" style="">{{#i18n}}"User"{{/i18n}}</label><input type="text" id="#gwbesacUser" name="gwbesacUser" style="height: 22px; width: 245px; " class="ui-widget-content ui-corner-all">
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--END:net/hedtech/banner/general/necc/general/Gwaesac/views/PanelMainCanvas.xvc-->
+          <!--BEGIN:net/hedtech/general/common/libraries/Goqolib/views/PanelGWelcomeCanvas.xvc-->
+          <div data-widget="panel" id="G_WELCOME_CANVAS" data-name="G$_WELCOME_CANVAS" data-class="canvas" class="ui-layout-horizontal welcome-container" style="width: 100%; ">
+            <div data-widget="text" class="ui-widget ui-text">{{#i18n}}"gWelcome.message.text"{{/i18n}}</div>
+          </div>
+          <!--END:net/hedtech/general/common/libraries/Goqolib/views/PanelGWelcomeCanvas.xvc-->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+		<FormStructure AlertDataPath="net/hedtech/banner/general/necc/general/Gwaesac/parts/goqolib/GOQOLIBAlerts.xml" LovDataPath="net/hedtech/banner/general/necc/general/Gwaesac/parts/goqolib/GOQOLIBLovs.xml" Name="GOQOLIB">
+		<Visual>
+			<Window Id="G$_SDSP_WINDOW"/>
+			<Window Id="G$_VPDI_WINDOW"/>
+			<Window Id="G$_EXTENDED_SEARCH_WINDOW"/>
+		</Visual>
+		<Logic>
+			<Block Id="G$_SDKEY"/>
+			<Block Id="G$_SDISP"/>
+			<Block Id="G$_VPDI_BLOCK"/>
+			<Block Id="G$_NAV_BLOCK"/>
+			<Block Id="G$_EXTENDED_SEARCH_BLOCK"/>
+		</Logic>
+	</FormStructure>

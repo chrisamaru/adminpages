@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:valueset"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:valueset http://www.morphis-tech.com/schema/foundations/valueset.xsd">
+	
+	<valueSet id="GJBJOBS__GJBJOBS_JOB_TYPE_IND_RG.ValueSet.Config" name="GJBJOBS__GJBJOBS_JOB_TYPE_IND_RG">
+		<columns>
+			<column name="LABEL" type="String" size="0"/>
+			<column name="DATA" type="String" size="0"/>
+		</columns>
+		<rows>
+			<row>
+				<DATA>C</DATA>
+				<LABEL>gjbjobs.gjbjobsJobTypeInd.item0.label</LABEL>
+			</row>
+			<row>
+				<DATA>E</DATA>
+				<LABEL>gjbjobs.gjbjobsJobTypeInd.item1.label</LABEL>
+			</row>
+			<row>
+				<DATA>P</DATA>
+				<LABEL>gjbjobs.gjbjobsJobTypeInd.item2.label</LABEL>
+			</row>
+			<row>
+				<DATA>R</DATA>
+				<LABEL>gjbjobs.gjbjobsJobTypeInd.item3.label</LABEL>
+			</row>
+			<row>
+				<DATA>J</DATA>
+				<LABEL>gjbjobs.gjbjobsJobTypeInd.item4.label</LABEL>
+			</row>
+			<row>
+				<DATA>A</DATA>
+				<LABEL>gjbjobs.gjbjobsJobTypeInd.item5.label</LABEL>
+			</row>
+		</rows>
+	</valueSet>
+</b:beans>

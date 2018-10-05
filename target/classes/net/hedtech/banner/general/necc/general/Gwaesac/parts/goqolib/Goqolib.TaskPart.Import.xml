@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:task"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:task http://www.morphis-tech.com/schema/foundations/task.xsd">
+	
+	<!-- model definition-->
+	<b:import resource="classpath:/net/hedtech/banner/general/necc/general/Gwaesac/parts/goqolib/model/GOQOLIB.Model.Config.xml"/>
+	
+	<task id="GOQOLIB.TaskPart.Import" name="GOQOLIB">
+		<taskResources>/net/hedtech/banner/general/necc/general/Gwaesac/parts/goqolib/GOQOLIBStruct.xml</taskResources>
+		<supportCodeConfiguration>
+			<packages>
+				<package  name="G$_FORM_CLASS" />
+				<package  name="G$_APPL_FORM_CLASS" />
+				<package  name="G$_INQ_FORM_CLASS" />
+				<package  name="G$_VAL_FORM_CLASS" />
+				<package  name="G$_VPDI_BLOCK" />
+				<package  name="G$_NAV_BLOCK" />
+				<package  name="G$_KEY_BLOCK_CLASS" />
+				<package  name="G$_CODE_CLASS" />
+				<package  name="G$_DATE_CLASS" />
+				<package  name="G$_ICON_BTN_CLASS" />
+        		<package name="G$_ID_CLASS" />
+        		<package name="G$_NAME_CLASS" />
+				<package  name="G$_EXTENDED_SEARCH_BLOCK" />
+			</packages>
+		</supportCodeConfiguration>
+
+		<formModelConfiguration config="GOQOLIB.Model.Config"/>
+		
+		<blockControllers>
+				<block  name="G$_SDKEY" />
+				<block  name="G$_SDISP" />
+		</blockControllers>
+	</task>
+</b:beans>

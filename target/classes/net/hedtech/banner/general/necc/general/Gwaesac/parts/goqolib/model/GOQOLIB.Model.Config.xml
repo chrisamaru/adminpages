@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:formmodel"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:formmodel http://www.morphis-tech.com/schema/foundations/formmodel.xsd">
+		<formModel id="GOQOLIB.Model.Config" name="GOQOLIB">
+		<parameters/>
+		<businessObjects>
+			<businessObject name="G$_SDKEY" />
+			<businessObject name="G$_SDISP" />
+			<businessObject name="G$_VPDI_BLOCK" />
+			<businessObject name="G$_NAV_BLOCK" />
+			<businessObject name="G$_EXTENDED_SEARCH_BLOCK" />
+		</businessObjects>
+		<valueSets>
+			<valueSet config="GTVVPDI_RG.ValueSet.Config"/>
+			<valueSet config="G___VPDI_ALL_RG.ValueSet.Config"/>
+			<valueSet config="G___SEARCH_RG.ValueSet.Config"/>
+			<valueSet config="GUROPTM_RG.ValueSet.Config"/>
+		</valueSets>
+	</formModel>
+</b:beans>

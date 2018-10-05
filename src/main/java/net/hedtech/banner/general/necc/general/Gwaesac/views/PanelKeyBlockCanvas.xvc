@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config layout="horizontal" xmlns="urn:schemas:morphis:frames:view" xmlns:xl="urn:schemas:morphis:frames:logic">
+	<interactionblock name="KEY_BLOCK"/>
+	<interactionblock name="BUTTON_CONTROL_BLOCK"/>
+	<panel class="ContentCanvas" name="KEY_BLOCK_CANVAS" style="keyblock" width="100%">
+		<gridflowlayout cols="2" orientation="horizontal" style="ui-layout-responsive">
+			<component>
+				<textbox autoskip="true" block="KEY_BLOCK" case="upper" datatype="String" height="23px" keyactions="NEXT_ITEM" maxlength="9" member="ID" name="id" label="ID" style="ui-buttoninput" validation="server">
+					<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+				</textbox>				
+				<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="23px" icon="flashlit" member="ID_LBT" name="idLbt" navigable="false" style="ui-buttoninput" tooltip="Search" width="20px">
+					<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+				</button>
+				<textbox name="fullName" width="256px" height="22px"  textalign="left" maxlength="64" block="KEY_BLOCK" member="FULL_NAME" datatype="String"   />
+			</component>
+<!-- 			<component> -->
+<!-- 				<textbox name="pidm" width="50px" height="22px" label="Pidm" textalign="right" maxlength="6" block="KEY_BLOCK" member="PIDM" datatype="Number"   /> -->
+<!-- 			</component> -->
+		</gridflowlayout>
+	</panel>
+	<panel style="keyblock-button-container">
+		<button accesskey="ALT+PAGE_DOWN" action="NEXT_BLOCK" block="KEY_BLOCK" label="keyBlock.executeBtn.label" member="EXECUTE_BTN" tooltip="keyBlock.executeBtn.tooltip"/>
+		<button accesskey="F5" action="CLEAR-FORM" block="KEY_BLOCK" label="keyBlock.keyClrfrmBtn.label" member="KEY-CLRFRM_BTN" tooltip="keyBlock.keyClrfrmBtn.tooltip" visible="false"/>
+	</panel>
+</config>
