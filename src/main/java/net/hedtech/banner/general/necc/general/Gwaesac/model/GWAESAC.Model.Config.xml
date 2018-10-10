@@ -9,6 +9,7 @@
 	<b:import resource="classpath:/net/hedtech/banner/general/necc/general/Gwaesac/model/KEY_BLOCK.Manager.Config.xml"/>
 	<b:import resource="classpath:/net/hedtech/banner/general/necc/general/Gwaesac/model/BUTTON_CONTROL_BLOCK.Manager.Config.xml"/>
 	<b:import resource="classpath:/net/hedtech/banner/general/necc/general/Gwaesac/model/FORM_HEADER.Manager.Config.xml"/>
+	<b:import resource="classpath:/net/hedtech/banner/general/necc/general/Gwaesac/model/GWREABR.Manager.Config.xml"/>
 	
 	<formModel id="GWAESAC.Model.Config" name="GWAESAC">
 		<modelClass>net.hedtech.banner.general.necc.general.Gwaesac.model.GwaesacModel</modelClass>
@@ -16,12 +17,19 @@
 		</parameters>
 		<businessObjects>
 			<businessObject name="GWBESAC" manager="GWBESAC.Manager.Config">
+				<associations>
+					<association child="GWREABR" autoQuery="false">
+						<mapping parent="GWBESAC_PIDM" child="GWREABR_PIDM"/>
+					</association>
+				</associations>
 			</businessObject>
 			<businessObject name="KEY_BLOCK" manager="KEY_BLOCK.Manager.Config">
 			</businessObject>
 			<businessObject name="BUTTON_CONTROL_BLOCK" manager="BUTTON_CONTROL_BLOCK.Manager.Config">
 			</businessObject>
 			<businessObject name="FORM_HEADER" manager="FORM_HEADER.Manager.Config">
+			</businessObject>
+			<businessObject name="GWREABR" manager="GWREABR.Manager.Config">
 			</businessObject>
 		</businessObjects>
 		<valueSets>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<config xmlns="urn:schemas:morphis:frames:view" xmlns:xl="urn:schemas:morphis:frames:logic" layout="horizontal">
+    <panel class="ContentCanvas" height="500px" name="GWREABR_CANVAS" width="790px">
+        <interactionBlock name="GWREABR"/>
+        <collapsiblepanel label="EAB Roles" name="cpanelGwreabr" width="100%">
+            <gridview block="GWREABR" name="grdGwreabr" width="100%">
+                <viewheader>
+                    <viewcolumn datatype="Number" label="Pidm" maxlength="0" member="GWREABR_PIDM" textalign="right" width="50px"/>
+                    <viewcolumn datatype="String" label="Role" maxlength="32" member="GWREABR_ROLE" width="224px"/>
+                    <viewcolumn datatype="Date" label="Activity Date" member="GWREABR_ACTIVITY_DATE" width="50px">
+                        <editor>
+                            <calendar/>
+                        </editor>
+                    </viewcolumn>
+                </viewheader>
+            </gridview>
+        </collapsiblepanel>
+    </panel>
+</config>

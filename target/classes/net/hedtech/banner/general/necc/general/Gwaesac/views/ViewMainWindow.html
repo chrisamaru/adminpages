@@ -110,6 +110,23 @@
             </div>
           </div>
           <!--END:net/hedtech/banner/general/necc/general/Gwaesac/views/PanelMainCanvas.xvc-->
+          <!--BEGIN:net/hedtech/banner/general/necc/general/Gwaesac/views/PanelGwreabrCanvas.xvc-->
+          <div data-widget="panel" id="GWREABR_CANVAS" data-name="GWREABR_CANVAS" data-class="contentcanvas" class="ui-layout-horizontal" style="height: 500px; width: 790px; ">
+            <div data-widget="collapsiblepanel" id="cpanelGwreabr" data-name="cpanelGwreabr" class="ui-widget ui-collapsiblepanel" style="width: 100%; ">
+              <h3>{{#i18n}}"EAB Roles"{{/i18n}}</h3>
+              <div class="ui-collapsiblepanel-content ui-layout-horizontal">
+                <div id="grdGwreabr" data-name="grdGwreabr" class="ui-widget ui-gridview" style="width: 100%; " data-widget="datagrid" data-block="GWREABR">
+                  <script type="application/json" data-role="columns">
+				[{ "title": {{#i18n_j}}"Pidm"{{/i18n_j}}, "member": "GWREABR_PIDM", "width": "50", "textalign": "right", "type": "Number", "data-maxlength": "0", "data-headertooltip": "" },
+			{ "title": {{#i18n_j}}"Role"{{/i18n_j}}, "member": "GWREABR_ROLE", "width": "224", "type": "String", "data-maxlength": "32", "data-headertooltip": "" },
+			{ "title": {{#i18n_j}}"Activity Date"{{/i18n_j}}, "member": "GWREABR_ACTIVITY_DATE", "width": "50", "editor": "calendar", "label": "", "type": "Date", "data-headertooltip": "" }
+				]
+			</script>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--END:net/hedtech/banner/general/necc/general/Gwaesac/views/PanelGwreabrCanvas.xvc-->
           <!--BEGIN:net/hedtech/general/common/libraries/Goqolib/views/PanelGWelcomeCanvas.xvc-->
           <div data-widget="panel" id="G_WELCOME_CANVAS" data-name="G$_WELCOME_CANVAS" data-class="canvas" class="ui-layout-horizontal welcome-container" style="width: 100%; ">
             <div data-widget="text" class="ui-widget ui-text">{{#i18n}}"gWelcome.message.text"{{/i18n}}</div>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:businessobject"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
+	<manager id="GWREABR.Manager.Config" name="GWREABR">
+		<items>
+			<item name="GWREABR_PIDM" logicalName="gwreabrPidm" type="java.math.BigDecimal" physicalName="GWREABR_PIDM">
+			</item>
+			<item name="GWREABR_ROLE" logicalName="gwreabrRole" type="String" physicalName="GWREABR_ROLE">
+			</item>
+			<item name="GWREABR_ACTIVITY_DATE" logicalName="gwreabrActivityDate" type="java.util.Date" physicalName="GWREABR_ACTIVITY_DATE">
+			</item>
+		</items>
+		
+		<adapterClass>net.hedtech.banner.general.necc.general.Gwaesac.model.GwreabrAdapter</adapterClass>
+		
+		
+		
+		
+	</manager>
+</b:beans>

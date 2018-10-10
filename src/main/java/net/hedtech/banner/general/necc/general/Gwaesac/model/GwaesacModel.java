@@ -24,8 +24,32 @@ public class GwaesacModel extends FormModel {
 	public FormHeader getFormHeader() {
 		return (FormHeader) getBusinessObject("FORM_HEADER");
 	}
+
+	public GSdkey getGSdkey() {
+		return (GSdkey) getBusinessObject("G$_SDKEY");
+	}
+
+	public GVpdiBlock getGVpdiBlock() {
+		return (GVpdiBlock) getBusinessObject("G$_VPDI_BLOCK");
+	}
+
+	public GNavBlock getGNavBlock() {
+		return (GNavBlock) getBusinessObject("G$_NAV_BLOCK");
+	}
+
+	public GExtendedSearchBlock getGExtendedSearchBlock() {
+		return (GExtendedSearchBlock) getBusinessObject("G$_EXTENDED_SEARCH_BLOCK");
+	}
 	
 	public IDBBusinessObject getGwbesac() {
 		return (IDBBusinessObject) getBusinessObject("GWBESAC");
+	}
+
+	public IDBBusinessObject getGSdisp() {
+		return (IDBBusinessObject) getBusinessObject("G$_SDISP");
+	}
+
+	public IDBBusinessObject getGwreabr() {
+		return (IDBBusinessObject) getBusinessObject("GWREABR");
 	}
 }

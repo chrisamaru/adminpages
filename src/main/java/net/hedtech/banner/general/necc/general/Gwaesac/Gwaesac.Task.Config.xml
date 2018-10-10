@@ -43,6 +43,7 @@
 			<block name="BUTTON_CONTROL_BLOCK">net.hedtech.banner.general.necc.general.Gwaesac.controller.ButtonControlBlockController</block>
 			<block name="KEY_BLOCK">net.hedtech.banner.general.necc.general.Gwaesac.controller.KeyBlockController</block>
 			<block name="FORM_HEADER">net.hedtech.banner.general.necc.general.Gwaesac.controller.FormHeaderController</block>
+			<block name="GWREABR">net.hedtech.banner.general.necc.general.Gwaesac.controller.GwreabrController</block>
 		</blockControllers>
 	</task>
 </b:beans>
