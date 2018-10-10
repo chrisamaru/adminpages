@@ -6,7 +6,19 @@
 			<panel width="100%">
 				<gridlayout cols="2" orientation="vertical">
 					<gridcell>
-						<textbox name="gwbesacStaffInd" width="50px" height="22px" label="Staff Ind" maxlength="1" block="GWBESAC" member="GWBESAC_STAFF_IND" datatype="String"   />
+						<textbox name="neccId" width="100px" height="22px" label="Necc Id" maxlength="9" block="GWBESAC" member="NECC_ID" datatype="String"   />
+					</gridcell>
+					<gridcell>
+						<textbox name="fullName" width="210px" height="22px" label="Name" maxlength="100" block="GWBESAC" member="FULL_NAME" datatype="String"   />
+					</gridcell>
+					<gridcell>
+						<textbox name="advisorInd" width="50px" height="22px" label="Advisor?" maxlength="1" block="GWBESAC" member="ADVISOR_IND" datatype="String"   />
+					</gridcell>
+					<gridcell>
+						<textbox name="facultyInd" width="50px" height="22px" label="Faculty?" maxlength="1" block="GWBESAC" member="FACULTY_IND" datatype="String"   />
+					</gridcell>
+					<gridcell>
+						<textbox name="gwbesacStaffInd" width="50px" height="22px" label="Staff?" maxlength="1" block="GWBESAC" member="GWBESAC_STAFF_IND" datatype="String"   />
 					</gridcell>
 					<gridcell>
 						<textbox name="gwbesacDwAccess" width="112px" height="22px" label="Degreeworks Access" maxlength="16" block="GWBESAC" member="GWBESAC_DW_ACCESS" datatype="String"   />

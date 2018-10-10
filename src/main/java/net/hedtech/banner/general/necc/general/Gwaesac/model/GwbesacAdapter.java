@@ -80,6 +80,50 @@ public class GwbesacAdapter extends BaseRowAdapter {
 	}
 
 	
+	
+
+	
+
+	
+
+	
+
+	public NString getNeccId() {
+		NString v = new NString((String) this.getValue("NECC_ID"));
+		return v;
+	}
+
+	public void setNeccId(NString value) {
+		this.setValue("NECC_ID", value.getValue());
+	}
+
+	public NString getFullName() {
+		NString v = new NString((String) this.getValue("FULL_NAME"));
+		return v;
+	}
+
+	public void setFullName(NString value) {
+		this.setValue("FULL_NAME", value.getValue());
+	}
+
+	public NString getAdvisorInd() {
+		NString v = new NString((String) this.getValue("ADVISOR_IND"));
+		return v;
+	}
+
+	public void setAdvisorInd(NString value) {
+		this.setValue("ADVISOR_IND", value.getValue());
+	}
+
+	public NString getFacultyInd() {
+		NString v = new NString((String) this.getValue("FACULTY_IND"));
+		return v;
+	}
+
+	public void setFacultyInd(NString value) {
+		this.setValue("FACULTY_IND", value.getValue());
+	}
+
 	public java.sql.RowId getROWID() {
 		return (java.sql.RowId) this.getValue("ROWID");
 	}}

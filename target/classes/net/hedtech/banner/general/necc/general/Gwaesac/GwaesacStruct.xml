@@ -10,7 +10,7 @@
     <Logic>
         <Block Id="BUTTON_CONTROL_BLOCK">
             <Item DataType="String" Id="CHECK_KEYS" Type="TextItem"/>
-			<Item CanvasName="KEY_BLOCK_CANVAS" Id="ID_LBT" MaxLength="0" Navigable="false" Type="Button"/>
+            <Item Id="ID_LBT" Type="Button"/>
         </Block>
         <Block Id="FORM_HEADER">
             <Item DataType="String" Id="CURRENT_FORM" Type="TextItem"/>
@@ -30,7 +30,10 @@
             <Item CanvasName="KEY_BLOCK_CANVAS" Id="KEY-CLRFRM_BTN" Type="Button" Visible="false"/>
         </Block>
         <Block Id="GWBESAC">
-            <Item CanvasName="MAIN_CANVAS" Id="GWBESAC_PIDM" Type="TextItem"/>
+            <Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="MAIN_CANVAS" Enabled="false" Id="NECC_ID" Type="TextItem"/>
+            <Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="MAIN_CANVAS" Enabled="false" Id="FULL_NAME" Type="TextItem"/>
+            <Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="MAIN_CANVAS" Enabled="false" Id="FACULTY_IND" Type="TextItem"/>
+            <Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="MAIN_CANVAS" Enabled="false" Id="ADVISOR_IND" Type="TextItem"/>
             <Item CanvasName="MAIN_CANVAS" Id="GWBESAC_STAFF_IND" Type="TextItem"/>
             <Item CanvasName="MAIN_CANVAS" Id="GWBESAC_DW_ACCESS" Type="TextItem"/>
             <Item CanvasName="MAIN_CANVAS" Id="GWBESAC_DW_ENABLED_IND" Type="TextItem"/>

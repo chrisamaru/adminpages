@@ -11,23 +11,33 @@
 					<item name="PIDM" businessObject="KEY_BLOCK"/>
 				</value>
 			</item>
-			<item name="GWBESAC_STAFF_IND" logicalName="gwbesacStaffInd" type="String" physicalName="GWBESAC_STAFF_IND">
+			<item name="GWBESAC_STAFF_IND" logicalName="gwbesacStaffInd" type="java.lang.String" physicalName="GWBESAC_STAFF_IND">
 			</item>
-			<item name="GWBESAC_DW_ACCESS" logicalName="gwbesacDwAccess" type="String" physicalName="GWBESAC_DW_ACCESS">
+			<item name="GWBESAC_DW_ACCESS" logicalName="gwbesacDwAccess" type="java.lang.String" physicalName="GWBESAC_DW_ACCESS">
 			</item>
-			<item name="GWBESAC_DW_ENABLED_IND" logicalName="gwbesacDwEnabledInd" type="String" physicalName="GWBESAC_DW_ENABLED_IND">
+			<item name="GWBESAC_DW_ENABLED_IND" logicalName="gwbesacDwEnabledInd" type="java.lang.String" physicalName="GWBESAC_DW_ENABLED_IND">
 			</item>
-			<item name="GWBESAC_EAB_ENABLED_IND" logicalName="gwbesacEabEnabledInd" type="String" physicalName="GWBESAC_EAB_ENABLED_IND">
+			<item name="GWBESAC_EAB_ENABLED_IND" logicalName="gwbesacEabEnabledInd" type="java.lang.String" physicalName="GWBESAC_EAB_ENABLED_IND">
 			</item>
 			<item name="GWBESAC_ACTIVITY_DATE" logicalName="gwbesacActivityDate" type="java.util.Date" physicalName="GWBESAC_ACTIVITY_DATE">
 			</item>
-			<item name="GWBESAC_USER" logicalName="gwbesacUser" type="String" physicalName="GWBESAC_USER">
+			<item name="GWBESAC_USER" logicalName="gwbesacUser" type="java.lang.String" physicalName="GWBESAC_USER">
+			</item>
+			<item name="NECC_ID" logicalName="neccId" type="String" virtual="true">
+			</item>
+			<item name="FULL_NAME" logicalName="fullName" type="String" virtual="true">
+			</item>
+			<item name="ADVISOR_IND" logicalName="advisorInd" type="String" virtual="true">
+			</item>
+			<item name="FACULTY_IND" logicalName="facultyInd" type="String" virtual="true">
 			</item>
 		</items>
 		
 		<adapterClass>net.hedtech.banner.general.necc.general.Gwaesac.model.GwbesacAdapter</adapterClass>
-		<!-- DefaultWhereClause needs completion on user end: -->
+		
 		<defaultWhereClause><![CDATA[where gwbesac_pidm = :PIDM]]></defaultWhereClause>
+		
+		
 		
 	</manager>
 </b:beans>

@@ -51,8 +51,30 @@
                   <table role="presentation" data-cols="2" class="ui-layout-grid" data-direction="column">
                     <tr>
                       <td class="ui-layout-cell ui-layout-horizontal">
-                        <div data-widget="textinput" data-member="GWBESAC_STAFF_IND" data-block="GWBESAC" data-type="String" id="gwbesacStaffInd" data-name="gwbesacStaffInd" class="ui-widget ui-textinput ui-label-position-left ui-label-align-start" data-maxlength="1">
-                          <label for="#gwbesacStaffInd" style="">{{#i18n}}"Staff Ind"{{/i18n}}</label><input type="text" id="#gwbesacStaffInd" name="gwbesacStaffInd" style="height: 22px; width: 50px; " class="ui-widget-content ui-corner-all">
+                        <div data-widget="textinput" data-member="NECC_ID" data-block="GWBESAC" data-type="String" id="neccId" data-name="neccId" class="ui-widget ui-textinput ui-label-position-left ui-label-align-start" data-maxlength="9">
+                          <label for="#neccId" style="">{{#i18n}}"Necc Id"{{/i18n}}</label><input type="text" id="#neccId" name="neccId" style="height: 22px; width: 100px; " class="ui-widget-content ui-corner-all">
+                        </div>
+                      </td><td class="ui-layout-cell ui-layout-horizontal">
+                        <div data-widget="textinput" data-member="GWBESAC_DW_ACCESS" data-block="GWBESAC" data-type="String" id="gwbesacDwAccess" data-name="gwbesacDwAccess" class="ui-widget ui-textinput ui-label-position-left ui-label-align-start" data-maxlength="16">
+                          <label for="#gwbesacDwAccess" style="">{{#i18n}}"Degreeworks Access"{{/i18n}}</label><input type="text" id="#gwbesacDwAccess" name="gwbesacDwAccess" style="height: 22px; width: 112px; " class="ui-widget-content ui-corner-all">
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="ui-layout-cell ui-layout-horizontal">
+                        <div data-widget="textinput" data-member="FULL_NAME" data-block="GWBESAC" data-type="String" id="fullName" data-name="fullName" class="ui-widget ui-textinput ui-label-position-left ui-label-align-start" data-maxlength="100">
+                          <label for="#fullName" style="">{{#i18n}}"Name"{{/i18n}}</label><input type="text" id="#fullName" name="fullName" style="height: 22px; width: 210px; " class="ui-widget-content ui-corner-all">
+                        </div>
+                      </td><td class="ui-layout-cell ui-layout-horizontal">
+                        <div data-widget="textinput" data-member="GWBESAC_DW_ENABLED_IND" data-block="GWBESAC" data-type="String" id="gwbesacDwEnabledInd" data-name="gwbesacDwEnabledInd" class="ui-widget ui-textinput ui-label-position-left ui-label-align-start" data-maxlength="1">
+                          <label for="#gwbesacDwEnabledInd" style="">{{#i18n}}"Degreeworks Enabled?"{{/i18n}}</label><input type="text" id="#gwbesacDwEnabledInd" name="gwbesacDwEnabledInd" style="height: 22px; width: 50px; " class="ui-widget-content ui-corner-all">
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="ui-layout-cell ui-layout-horizontal">
+                        <div data-widget="textinput" data-member="ADVISOR_IND" data-block="GWBESAC" data-type="String" id="advisorInd" data-name="advisorInd" class="ui-widget ui-textinput ui-label-position-left ui-label-align-start" data-maxlength="1">
+                          <label for="#advisorInd" style="">{{#i18n}}"Advisor?"{{/i18n}}</label><input type="text" id="#advisorInd" name="advisorInd" style="height: 22px; width: 50px; " class="ui-widget-content ui-corner-all">
                         </div>
                       </td><td class="ui-layout-cell ui-layout-horizontal">
                         <div data-widget="textinput" data-member="GWBESAC_EAB_ENABLED_IND" data-block="GWBESAC" data-type="String" id="gwbesacEabEnabledInd" data-name="gwbesacEabEnabledInd" class="ui-widget ui-textinput ui-label-position-left ui-label-align-start" data-maxlength="1">
@@ -62,8 +84,8 @@
                     </tr>
                     <tr>
                       <td class="ui-layout-cell ui-layout-horizontal">
-                        <div data-widget="textinput" data-member="GWBESAC_DW_ACCESS" data-block="GWBESAC" data-type="String" id="gwbesacDwAccess" data-name="gwbesacDwAccess" class="ui-widget ui-textinput ui-label-position-left ui-label-align-start" data-maxlength="16">
-                          <label for="#gwbesacDwAccess" style="">{{#i18n}}"Degreeworks Access"{{/i18n}}</label><input type="text" id="#gwbesacDwAccess" name="gwbesacDwAccess" style="height: 22px; width: 112px; " class="ui-widget-content ui-corner-all">
+                        <div data-widget="textinput" data-member="FACULTY_IND" data-block="GWBESAC" data-type="String" id="facultyInd" data-name="facultyInd" class="ui-widget ui-textinput ui-label-position-left ui-label-align-start" data-maxlength="1">
+                          <label for="#facultyInd" style="">{{#i18n}}"Faculty?"{{/i18n}}</label><input type="text" id="#facultyInd" name="facultyInd" style="height: 22px; width: 50px; " class="ui-widget-content ui-corner-all">
                         </div>
                       </td><td class="ui-layout-cell ui-layout-horizontal">
                         <div data-widget="datefield" data-member="GWBESAC_ACTIVITY_DATE" data-block="GWBESAC" data-type="Date" id="gwbesacActivityDate" data-name="gwbesacActivityDate" class="ui-widget ui-calendar ui-label-position-left ui-label-align-start">
@@ -73,8 +95,8 @@
                     </tr>
                     <tr>
                       <td class="ui-layout-cell ui-layout-horizontal">
-                        <div data-widget="textinput" data-member="GWBESAC_DW_ENABLED_IND" data-block="GWBESAC" data-type="String" id="gwbesacDwEnabledInd" data-name="gwbesacDwEnabledInd" class="ui-widget ui-textinput ui-label-position-left ui-label-align-start" data-maxlength="1">
-                          <label for="#gwbesacDwEnabledInd" style="">{{#i18n}}"Degreeworks Enabled?"{{/i18n}}</label><input type="text" id="#gwbesacDwEnabledInd" name="gwbesacDwEnabledInd" style="height: 22px; width: 50px; " class="ui-widget-content ui-corner-all">
+                        <div data-widget="textinput" data-member="GWBESAC_STAFF_IND" data-block="GWBESAC" data-type="String" id="gwbesacStaffInd" data-name="gwbesacStaffInd" class="ui-widget ui-textinput ui-label-position-left ui-label-align-start" data-maxlength="1">
+                          <label for="#gwbesacStaffInd" style="">{{#i18n}}"Staff?"{{/i18n}}</label><input type="text" id="#gwbesacStaffInd" name="gwbesacStaffInd" style="height: 22px; width: 50px; " class="ui-widget-content ui-corner-all">
                         </div>
                       </td><td class="ui-layout-cell ui-layout-horizontal">
                         <div data-widget="textinput" data-member="GWBESAC_USER" data-block="GWBESAC" data-type="String" id="gwbesacUser" data-name="gwbesacUser" class="ui-widget ui-textinput ui-label-position-left ui-label-align-start" data-maxlength="35">
