@@ -12,7 +12,8 @@
 						<textbox name="fullName" width="210px" height="22px" label="Name" maxlength="100" block="GWBESAC" member="FULL_NAME" datatype="String"   />
 					</gridcell>
 					<gridcell>
-						<textbox name="advisorInd" width="50px" height="22px" label="Advisor?" maxlength="1" block="GWBESAC" member="ADVISOR_IND" datatype="String"   />
+						<checkbox name="advisorInd" label="Advisor?" maxlength="1" block="GWBESAC" member="ADVISOR_IND" falsevalue="N" value="Y"></checkbox>
+<!-- 						<textbox name="advisorInd" width="50px" height="22px" label="Advisor?" maxlength="1" block="GWBESAC" member="ADVISOR_IND" datatype="String"   /> -->
 					</gridcell>
 					<gridcell>
 						<textbox name="facultyInd" width="50px" height="22px" label="Faculty?" maxlength="1" block="GWBESAC" member="FACULTY_IND" datatype="String"   />

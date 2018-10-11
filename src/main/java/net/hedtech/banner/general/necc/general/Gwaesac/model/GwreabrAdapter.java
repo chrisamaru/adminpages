@@ -43,6 +43,15 @@ public class GwreabrAdapter extends BaseRowAdapter {
 		this.setValue("GWREABR_ACTIVITY_DATE", value.getValue());
 	}
 
+	public NString getGwbeabrUser() {
+		NString v = new NString((String)this.getValue("GWBEABR_USER"));
+		return v;
+	}
+	
+	public void setGwbeabrUser(NString value) {
+		this.setValue("GWBEABR_USER", value.getValue());
+	}
+
 	
 	public java.sql.RowId getROWID() {
 		return (java.sql.RowId) this.getValue("ROWID");

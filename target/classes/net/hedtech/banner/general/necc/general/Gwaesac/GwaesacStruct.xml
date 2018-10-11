@@ -42,9 +42,10 @@
             <Item CanvasName="MAIN_CANVAS" Id="GWBESAC_ACTIVITY_DATE" Type="TextItem"/>
             <Item CanvasName="MAIN_CANVAS" Id="GWBESAC_USER" Type="TextItem"/>
         </Block>
-        <Block AllowSearch="false" AllowUpdate="false" Id="GWREABR" MultiRecord="true">
-            <Item CanvasName="GWREABR_CANVAS" Id="GWREABR_PIDM" Type="TextItem"/>
+        <Block Id="GWREABR" MultiRecord="true">
+            <Item Id="GWREABR_PIDM" Type="TextItem"/>
             <Item CanvasName="GWREABR_CANVAS" Id="GWREABR_ROLE" Type="TextItem"/>
+            <Item CanvasName="GWREABR_CANVAS" Id="GWBEABR_USER" Type="TextItem"/>
             <Item CanvasName="GWREABR_CANVAS" Id="GWREABR_ACTIVITY_DATE" Type="TextItem"/>
         </Block>
     </Logic>

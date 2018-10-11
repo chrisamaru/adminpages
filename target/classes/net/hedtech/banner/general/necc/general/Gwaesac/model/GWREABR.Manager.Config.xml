@@ -12,6 +12,8 @@
 			</item>
 			<item name="GWREABR_ACTIVITY_DATE" logicalName="gwreabrActivityDate" type="java.util.Date" physicalName="GWREABR_ACTIVITY_DATE">
 			</item>
+			<item name="GWBEABR_USER" logicalName="gwbeabrUser" type="String" physicalName="GWBEABR_USER">
+			</item>
 		</items>
 		
 		<adapterClass>net.hedtech.banner.general.necc.general.Gwaesac.model.GwreabrAdapter</adapterClass>
