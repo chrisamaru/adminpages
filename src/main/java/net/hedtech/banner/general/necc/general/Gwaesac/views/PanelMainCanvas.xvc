@@ -4,7 +4,7 @@
 	<panel id="MAIN_CANVAS" name="MAIN_CANVAS" width="100%"  class="StackedCanvas">
 		<collapsiblepanel label="mainWindow.title" name="rect47" width="100%">
 			<panel width="100%">
-				<gridlayout cols="2" orientation="vertical">
+				<gridlayout cols="2" orientation="horizontal">
 					<gridcell>
 						<textbox name="neccId" width="100px" height="22px" label="Necc Id" maxlength="9" block="GWBESAC" member="NECC_ID" datatype="String"   />
 					</gridcell>
@@ -12,8 +12,7 @@
 						<textbox name="fullName" width="210px" height="22px" label="Name" maxlength="100" block="GWBESAC" member="FULL_NAME" datatype="String"   />
 					</gridcell>
 					<gridcell>
-						<checkbox name="advisorInd" label="Advisor?" maxlength="1" block="GWBESAC" member="ADVISOR_IND" falsevalue="N" value="Y"></checkbox>
-<!-- 						<textbox name="advisorInd" width="50px" height="22px" label="Advisor?" maxlength="1" block="GWBESAC" member="ADVISOR_IND" datatype="String"   /> -->
+						<textbox name="advisorInd" width="50px" height="22px" label="Advisor?" maxlength="1" block="GWBESAC" member="ADVISOR_IND" datatype="String"   />
 					</gridcell>
 					<gridcell>
 						<textbox name="facultyInd" width="50px" height="22px" label="Faculty?" maxlength="1" block="GWBESAC" member="FACULTY_IND" datatype="String"   />
@@ -31,10 +30,10 @@
 						<textbox name="gwbesacEabEnabledInd" width="50px" height="22px" label="EAB Enabled?" maxlength="1" block="GWBESAC" member="GWBESAC_EAB_ENABLED_IND" datatype="String"   />
 					</gridcell>
 					<gridcell>
-						<calendar name="gwbesacActivityDate" width="50" height="22px" label="Activity Date" block="GWBESAC" member="GWBESAC_ACTIVITY_DATE" datatype="Date"   />
+						<calendar name="gwbesacActivityDate" width="50" height="22px" enabled="false" label="Activity Date" block="GWBESAC" member="GWBESAC_ACTIVITY_DATE" datatype="Date"   />
 					</gridcell>
 					<gridcell>
-						<textbox name="gwbesacUser" width="245px" height="22px" label="User" maxlength="35" block="GWBESAC" member="GWBESAC_USER" datatype="String"   />
+						<textbox name="gwbesacUser" width="245px" height="22px" enabled="false" label="User" maxlength="35" block="GWBESAC" member="GWBESAC_USER" datatype="String"   />
 					</gridcell>
 				</gridlayout>
 			</panel>

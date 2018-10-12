@@ -39,14 +39,14 @@
             <Item CanvasName="MAIN_CANVAS" Id="GWBESAC_DW_ACCESS" Type="TextItem"/>
             <Item CanvasName="MAIN_CANVAS" Id="GWBESAC_DW_ENABLED_IND" Type="TextItem"/>
             <Item CanvasName="MAIN_CANVAS" Id="GWBESAC_EAB_ENABLED_IND" Type="TextItem"/>
-            <Item CanvasName="MAIN_CANVAS" Id="GWBESAC_ACTIVITY_DATE" Type="TextItem"/>
-            <Item CanvasName="MAIN_CANVAS" Id="GWBESAC_USER" Type="TextItem"/>
+            <Item CanvasName="MAIN_CANVAS" Enabled="false" Id="GWBESAC_ACTIVITY_DATE" Type="TextItem"/>
+            <Item CanvasName="MAIN_CANVAS" Enabled="false" Id="GWBESAC_USER" Type="TextItem"/>
         </Block>
         <Block Id="GWREABR" MultiRecord="true">
             <Item Id="GWREABR_PIDM" Type="TextItem"/>
             <Item CanvasName="GWREABR_CANVAS" Id="GWREABR_ROLE" Type="TextItem"/>
-            <Item CanvasName="GWREABR_CANVAS" Id="GWBEABR_USER" Type="TextItem"/>
-            <Item CanvasName="GWREABR_CANVAS" Id="GWREABR_ACTIVITY_DATE" Type="TextItem"/>
+            <Item CanvasName="GWREABR_CANVAS" Enabled="false" Id="GWBEABR_USER" Type="TextItem"/>
+            <Item CanvasName="GWREABR_CANVAS" Enabled="false" Id="GWREABR_ACTIVITY_DATE" Type="TextItem"/>
         </Block>
     </Logic>
 </FormStructure>
