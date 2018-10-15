@@ -6,6 +6,7 @@ import net.hedtech.banner.general.necc.general.Gwaesac.GwaesacTask;
 import net.hedtech.banner.general.necc.general.Gwaesac.model.GwaesacModel;
 import morphis.foundations.core.appsupportlib.runtime.action.*;
 import morphis.foundations.core.appsupportlib.ui.KeyFunction;
+import morphis.foundations.core.types.NDate;
 import morphis.foundations.core.types.NString;
 
 import static morphis.foundations.core.types.Types.*;
@@ -26,6 +27,12 @@ import morphis.foundations.core.appdatalayer.events.BeforeQuery;
 import morphis.foundations.core.appdatalayer.events.QueryEvent;
 import morphis.foundations.core.appdatalayer.events.RowAdapterEvent;
 import morphis.foundations.core.appdatalayer.events.AfterQuery;
+import morphis.foundations.core.appdatalayer.events.BeforeRowInsert;
+import morphis.foundations.core.appdatalayer.events.BeforeRowUpdate;
+import static morphis.foundations.core.appsupportlib.Globals.getGlobal;
+import morphis.foundations.core.appsupportlib.runtime.events.RecordCreated;
+import java.util.EventObject;
+import morphis.foundations.core.appdatalayer.events.AfterRowDelete;
 
 public class GwbesacController extends DefaultBlockController {
 
@@ -82,8 +89,8 @@ public class GwbesacController extends DefaultBlockController {
 		}
 		
 		// Retrieve the data from SIRASGN
-		String sirasgnC = "SELECT inst.SIBINST_ADVR_IND,\r\n" + 
-				"       inst.SIBINST_SCHD_IND\r\n" + 
+		String sirasgnC = "SELECT NVL(inst.SIBINST_ADVR_IND, 'N'),\r\n" + 
+				"       NVL(inst.SIBINST_SCHD_IND, 'N')\r\n" + 
 				"  FROM sibinst inst\r\n" + 
 				" WHERE     inst.SIBINST_PIDM = :KEY_BLOCK_PIDM\r\n" + 
 				"       AND inst.SIBINST_TERM_CODE_EFF =\r\n" + 
@@ -108,6 +115,20 @@ public class GwbesacController extends DefaultBlockController {
 			sirasgnCursor.close();
 		}
 
+	}
+
+	@BeforeRowInsert
+	public void gwbesac_BeforeRowInsert(RowAdapterEvent rowAdapterEvent) {
+		GwbesacAdapter gwbesacElement = (GwbesacAdapter) this.getFormModel().getGwbesac().getRowAdapter(true);
+		gwbesacElement.setGwbesacActivityDate(NDate.getNow());
+		gwbesacElement.setGwbesacUser(getGlobal("CURRENT_USER"));		
+	}
+
+	@BeforeRowUpdate
+	public void gwbesac_BeforeRowUpdate(RowAdapterEvent rowAdapterEvent) {
+		GwbesacAdapter gwbesacElement = (GwbesacAdapter) this.getFormModel().getGwbesac().getRowAdapter(true);
+		gwbesacElement.setGwbesacActivityDate(NDate.getNow());
+		gwbesacElement.setGwbesacUser(getGlobal("CURRENT_USER"));		
 	}
 
 }

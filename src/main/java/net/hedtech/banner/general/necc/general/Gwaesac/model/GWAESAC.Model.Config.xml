@@ -18,7 +18,7 @@
 		<businessObjects>
 			<businessObject name="GWBESAC" manager="GWBESAC.Manager.Config">
 				<associations>
-					<association child="GWREABR" autoQuery="false">
+					<association child="GWREABR" deleteParentBehavior="Cascading" autoQuery="false">
 						<mapping parent="GWBESAC_PIDM" child="GWREABR_PIDM"/>
 					</association>
 				</associations>

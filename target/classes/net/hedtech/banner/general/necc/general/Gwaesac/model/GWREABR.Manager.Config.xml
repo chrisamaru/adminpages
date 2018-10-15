@@ -12,7 +12,7 @@
 			</item>
 			<item name="GWREABR_ACTIVITY_DATE" logicalName="gwreabrActivityDate" type="java.util.Date" physicalName="GWREABR_ACTIVITY_DATE">
 			</item>
-			<item name="GWBEABR_USER" logicalName="gwbeabrUser" type="String" physicalName="GWBEABR_USER">
+			<item name="GWREABR_USER" logicalName="gwreabrUser" type="String" physicalName="GWREABR_USER">
 			</item>
 		</items>
 		

@@ -45,11 +45,11 @@ public class GwaesacModel extends FormModel {
 		return (IDBBusinessObject) getBusinessObject("GWBESAC");
 	}
 
-	public IDBBusinessObject getGSdisp() {
-		return (IDBBusinessObject) getBusinessObject("G$_SDISP");
-	}
-
 	public IDBBusinessObject getGwreabr() {
 		return (IDBBusinessObject) getBusinessObject("GWREABR");
+	}
+
+	public IDBBusinessObject getGSdisp() {
+		return (IDBBusinessObject) getBusinessObject("G$_SDISP");
 	}
 }
