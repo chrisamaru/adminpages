@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:valueset"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:valueset http://www.morphis-tech.com/schema/foundations/valueset.xsd">
+	
+	<valueSet id="GWVEABR_RG.ValueSet.Config" name="GWVEABR_RG">
+		<columns>
+			<column name="GWVEABR_ROLE" type="String" size="32"/>
+			<column name="GWVEABR_ROLE_DESC" type="String" size="255"/>
+		</columns>
+		<query><![CDATA[SELECT * FROM NECC.GWVEABR]]>
+		</query>
+		<parameters>
+		</parameters>
+	</valueSet>
+</b:beans>

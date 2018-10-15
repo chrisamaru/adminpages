@@ -5,7 +5,11 @@
         <collapsiblepanel label="EAB Roles" name="cpanelGwreabr" width="100%">
             <gridview block="GWREABR" name="grdGwreabr" width="100%">
                 <viewheader>
-                    <viewcolumn datatype="String" label="EAB Role" maxlength="32" member="GWREABR_ROLE" width="224px"/>
+                    <viewcolumn datatype="String" label="EAB Role" maxlength="32" member="GWREABR_ROLE" width="224px">
+                    	<editor>
+							<lovbox/>
+						</editor>
+                    </viewcolumn>
                     <viewcolumn datatype="String" label="User" maxlength="35" member="GWREABR_USER" width="245px"/>
                     <viewcolumn datatype="Date" label="Activity Date" member="GWREABR_ACTIVITY_DATE" width="100px">
                         <editor>

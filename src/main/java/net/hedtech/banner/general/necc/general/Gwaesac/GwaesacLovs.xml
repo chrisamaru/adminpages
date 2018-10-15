@@ -1,2 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Lovs/>
+<Lovs>
+    <Lov RecordGroup="GWVEABR_RG" Height="500" Width="400" Title="lovGwveabrRg.title" Name="LOV_GWVEABR_RG">
+        <Columns>
+            <Column ReturnItem="GLOBAL.VALUE" Width="50" DataMember="GWVEABR_ROLE"/>
+            <Column Width="50" DataMember="GWVEABR_ROLE_DESC"/>
+        </Columns>
+    </Lov>
+</Lovs>

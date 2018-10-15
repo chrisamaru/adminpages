@@ -10,6 +10,7 @@
 	<b:import resource="classpath:/net/hedtech/banner/general/necc/general/Gwaesac/model/BUTTON_CONTROL_BLOCK.Manager.Config.xml"/>
 	<b:import resource="classpath:/net/hedtech/banner/general/necc/general/Gwaesac/model/FORM_HEADER.Manager.Config.xml"/>
 	<b:import resource="classpath:/net/hedtech/banner/general/necc/general/Gwaesac/model/GWREABR.Manager.Config.xml"/>
+	<b:import resource="classpath:/net/hedtech/banner/general/necc/general/Gwaesac/model/GWAESAC.ValueSet.Config.xml"/>
 	
 	<formModel id="GWAESAC.Model.Config" name="GWAESAC">
 		<modelClass>net.hedtech.banner.general.necc.general.Gwaesac.model.GwaesacModel</modelClass>
@@ -33,6 +34,7 @@
 			</businessObject>
 		</businessObjects>
 		<valueSets>
+			<valueSet config="GWVEABR_RG.ValueSet.Config"/>
 		</valueSets>
 	</formModel>
 </b:beans>

@@ -43,7 +43,7 @@
             <Item CanvasName="MAIN_CANVAS" Enabled="false" Id="GWBESAC_USER" Type="TextItem"/>
         </Block>
         <Block Id="GWREABR" MultiRecord="true">
-            <Item CanvasName="GWREABR_CANVAS" Id="GWREABR_ROLE" Type="TextItem"/>
+            <Item CanvasName="GWREABR_CANVAS" Id="GWREABR_ROLE" Lov="LOV_GWVEABR_RG" Type="TextItem"/>
             <Item CanvasName="GWREABR_CANVAS" Enabled="false" Id="GWREABR_USER" Type="TextItem"/>
             <Item CanvasName="GWREABR_CANVAS" Enabled="false" Id="GWREABR_ACTIVITY_DATE" Type="TextItem"/>
         </Block>
