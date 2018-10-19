@@ -124,6 +124,15 @@ public class GwbesacAdapter extends BaseRowAdapter {
 		this.setValue("FACULTY_IND", value.getValue());
 	}
 
+	public NString getDwAccessDesc() {
+		NString v = new NString((String) this.getValue("DW_ACCESS_DESC"));
+		return v;
+	}
+
+	public void setDwAccessDesc(NString value) {
+		this.setValue("DW_ACCESS_DESC", value.getValue());
+	}
+
 	public java.sql.RowId getROWID() {
 		return (java.sql.RowId) this.getValue("ROWID");
 	}}

@@ -23,13 +23,15 @@
 			</item>
 			<item name="GWBESAC_USER" logicalName="gwbesacUser" type="java.lang.String" physicalName="GWBESAC_USER">
 			</item>
-			<item name="NECC_ID" logicalName="neccId" type="String" virtual="true">
+			<item name="NECC_ID" logicalName="neccId" type="java.lang.String" virtual="true">
 			</item>
-			<item name="FULL_NAME" logicalName="fullName" type="String" virtual="true">
+			<item name="FULL_NAME" logicalName="fullName" type="java.lang.String" virtual="true">
 			</item>
-			<item name="ADVISOR_IND" logicalName="advisorInd" type="String" virtual="true">
+			<item name="ADVISOR_IND" logicalName="advisorInd" type="java.lang.String" virtual="true">
 			</item>
-			<item name="FACULTY_IND" logicalName="facultyInd" type="String" virtual="true">
+			<item name="FACULTY_IND" logicalName="facultyInd" type="java.lang.String" virtual="true">
+			</item>
+			<item name="DW_ACCESS_DESC" logicalName="dwAccessDesc" type="String" virtual="true">
 			</item>
 		</items>
 		

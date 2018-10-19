@@ -2,11 +2,16 @@ package net.hedtech.banner.general.necc.general.Gwaesac.controller;
 
 import morphis.foundations.core.appsupportlib.runtime.control.IFormController;
 import net.hedtech.general.common.forms.controller.DefaultBlockController;
+import net.hedtech.general.common.libraries.Goqolib.services.GCodeClass;
+import net.hedtech.general.common.libraries.Goqolib.services.GDescClass;
+import net.hedtech.general.common.libraries.Goqolib.services.GIconBtnClass;
 import net.hedtech.banner.general.necc.general.Gwaesac.GwaesacTask;
 import net.hedtech.banner.general.necc.general.Gwaesac.model.GwaesacModel;
 import morphis.foundations.core.appsupportlib.runtime.action.*;
 import morphis.foundations.core.appsupportlib.ui.KeyFunction;
+import morphis.foundations.core.types.NBool;
 import morphis.foundations.core.types.NDate;
+import morphis.foundations.core.types.NNumber;
 import morphis.foundations.core.types.NString;
 
 import static morphis.foundations.core.types.Types.*;
@@ -64,12 +69,11 @@ public class GwbesacController extends DefaultBlockController {
 	@AfterQuery
 	public void gwbesac_AfterQuery(RowAdapterEvent rowAdapterEvent) {
 		GwbesacAdapter gwbesacElement = (GwbesacAdapter) this.getFormModel().getGwbesac().getRowAdapter(true);
-		
+
 		// Retrieve the data from SPRIDEN
-		String spridenC = "select iden.SPRIDEN_ID, f_format_name(iden.spriden_pidm, 'LFMI')\r\n" + 
-				"from spriden iden\r\n" + 
-				"where iden.SPRIDEN_PIDM = :KEY_BLOCK_PIDM\r\n" + 
-				"and iden.SPRIDEN_CHANGE_IND IS NULL";
+		String spridenC = "select iden.SPRIDEN_ID, f_format_name(iden.spriden_pidm, 'LFMI')\r\n"
+				+ "from spriden iden\r\n" + "where iden.SPRIDEN_PIDM = :KEY_BLOCK_PIDM\r\n"
+				+ "and iden.SPRIDEN_CHANGE_IND IS NULL";
 		DataCursor spridenCursor = new DataCursor(spridenC);
 		NString id = NString.getNull();
 		NString fullName = NString.getNull();
@@ -87,16 +91,13 @@ public class GwbesacController extends DefaultBlockController {
 		} finally {
 			spridenCursor.close();
 		}
-		
+
 		// Retrieve the data from SIRASGN
-		String sirasgnC = "SELECT NVL(inst.SIBINST_ADVR_IND, 'N'),\r\n" + 
-				"       NVL(inst.SIBINST_SCHD_IND, 'N')\r\n" + 
-				"  FROM sibinst inst\r\n" + 
-				" WHERE     inst.SIBINST_PIDM = :KEY_BLOCK_PIDM\r\n" + 
-				"       AND inst.SIBINST_TERM_CODE_EFF =\r\n" + 
-				"           (SELECT MAX (ins1.SIBINST_TERM_CODE_EFF)\r\n" + 
-				"              FROM sibinst ins1\r\n" + 
-				"             WHERE ins1.SIBINST_PIDM = inst.SIBINST_PIDM)";
+		String sirasgnC = "SELECT NVL(inst.SIBINST_ADVR_IND, 'N'),\r\n" + "       NVL(inst.SIBINST_SCHD_IND, 'N')\r\n"
+				+ "  FROM sibinst inst\r\n" + " WHERE     inst.SIBINST_PIDM = :KEY_BLOCK_PIDM\r\n"
+				+ "       AND inst.SIBINST_TERM_CODE_EFF =\r\n"
+				+ "           (SELECT MAX (ins1.SIBINST_TERM_CODE_EFF)\r\n" + "              FROM sibinst ins1\r\n"
+				+ "             WHERE ins1.SIBINST_PIDM = inst.SIBINST_PIDM)";
 		DataCursor sirasgnCursor = new DataCursor(sirasgnC);
 		NString advisorInd = NString.getNull();
 		NString facultyInd = NString.getNull();
@@ -121,14 +122,16 @@ public class GwbesacController extends DefaultBlockController {
 	public void gwbesac_BeforeRowInsert(RowAdapterEvent rowAdapterEvent) {
 		GwbesacAdapter gwbesacElement = (GwbesacAdapter) this.getFormModel().getGwbesac().getRowAdapter(true);
 		gwbesacElement.setGwbesacActivityDate(NDate.getNow());
-		gwbesacElement.setGwbesacUser(getGlobal("CURRENT_USER"));		
+		gwbesacElement.setGwbesacUser(getGlobal("CURRENT_USER"));
 	}
 
 	@BeforeRowUpdate
 	public void gwbesac_BeforeRowUpdate(RowAdapterEvent rowAdapterEvent) {
 		GwbesacAdapter gwbesacElement = (GwbesacAdapter) this.getFormModel().getGwbesac().getRowAdapter(true);
 		gwbesacElement.setGwbesacActivityDate(NDate.getNow());
-		gwbesacElement.setGwbesacUser(getGlobal("CURRENT_USER"));		
+		gwbesacElement.setGwbesacUser(getGlobal("CURRENT_USER"));
 	}
+
+
 
 }

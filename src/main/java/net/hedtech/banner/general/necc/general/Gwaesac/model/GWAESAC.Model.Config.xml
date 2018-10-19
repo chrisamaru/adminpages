@@ -35,6 +35,7 @@
 		</businessObjects>
 		<valueSets>
 			<valueSet config="GWVEABR_RG.ValueSet.Config"/>
+			<valueSet config="GWVDWRL_RG.ValueSet.Config"/>
 		</valueSets>
 	</formModel>
 </b:beans>

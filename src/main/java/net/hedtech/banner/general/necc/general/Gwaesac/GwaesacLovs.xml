@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Lovs>
-    <Lov RecordGroup="GWVEABR_RG" Height="500" Width="400" Title="lovGwveabrRg.title" Name="LOV_GWVEABR_RG">
+    <Lov RecordGroup="GWVEABR_RG" Height="500" UseHeight="true" Width="400" UseWidth="true" Title="lovGwveabrRg.title" Name="LOV_GWVEABR_RG">
         <Columns>
             <Column ReturnItem="GLOBAL.VALUE" Width="50" DataMember="GWVEABR_ROLE"/>
             <Column Width="50" DataMember="GWVEABR_ROLE_DESC"/>
+        </Columns>
+    </Lov>
+    <Lov RecordGroup="GWVDWRL_RG" Height="500" Width="400" Title="lovGwvdwrlRg.title" Name="LOV_GWVDWRL_RG">
+        <Columns>
+            <Column ReturnItem="GLOBAL.VALUE" Width="50" DataMember="GWVDWRL_CODE"/>
+            <Column Width="50" DataMember="GWVDWRL_DESC"/>
         </Columns>
     </Lov>
 </Lovs>

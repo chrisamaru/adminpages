@@ -21,7 +21,9 @@
 						<textbox name="gwbesacStaffInd" width="50px" height="22px" label="Staff?" maxlength="1" block="GWBESAC" member="GWBESAC_STAFF_IND" datatype="String"   />
 					</gridcell>
 					<gridcell>
-						<textbox name="gwbesacDwAccess" width="112px" height="22px" label="Degreeworks Access" maxlength="16" block="GWBESAC" member="GWBESAC_DW_ACCESS" datatype="String"   />
+						<textbox autoskip="true" case="upper" name="gwbesacDwAccess" width="75px" height="22px" keyactions="NEXT_ITEM" label="Degreeworks Access" maxlength="16" block="GWBESAC" member="GWBESAC_DW_ACCESS" style="ui-buttoninput" datatype="String" />
+						<button action="WHEN-BUTTON-PRESSED" block="GWBESAC" height="23px" icon="search" member="GWBESAC_DW_ACCESS_LBT" name="gwbesacDwAccessLbt" navigable="false" style="ui-buttoninput" width="22px"></button>
+						<text width="150px" height="22px" block="GWBESAC" member="DW_ACCESS_DESC" datatype="String" />
 					</gridcell>
 					<gridcell>
 						<textbox name="gwbesacDwEnabledInd" width="50px" height="22px" label="Degreeworks Enabled?" maxlength="1" block="GWBESAC" member="GWBESAC_DW_ENABLED_IND" datatype="String"   />
