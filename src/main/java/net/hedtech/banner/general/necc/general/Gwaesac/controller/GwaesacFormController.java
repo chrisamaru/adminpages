@@ -6,6 +6,8 @@ import net.hedtech.banner.general.necc.general.Gwaesac.GwaesacTask;
 import net.hedtech.banner.general.necc.general.Gwaesac.model.GwaesacModel;
 import net.hedtech.banner.general.necc.general.Gwaesac.model.GwbesacAdapter;
 import morphis.foundations.core.appsupportlib.runtime.action.ActionTrigger;
+import morphis.foundations.core.appsupportlib.runtime.action.ValidationTrigger;
+
 import static morphis.foundations.core.appsupportlib.Globals.*;
 import morphis.foundations.core.appsupportlib.ui.KeyFunction;
 import static morphis.foundations.core.types.Types.*;
@@ -298,7 +300,6 @@ public class GwaesacFormController extends DefaultFormController {
 
 	@ActionTrigger(action = "KEY-NEXT-ITEM", item = "GWBESAC_DW_ACCESS", function = KeyFunction.NEXT_ITEM)
 	public void gwbesacDwAccess_keyNexItem() {
-		getGCodeClass().nextItem();
 		GwbesacAdapter gwbesacElement = (GwbesacAdapter) this.getFormModel().getGwbesac().getRowAdapter(true);
 		String gwvdwrlC = "select dwrl.GWVDWRL_DESC\r\n" + "from gwvdwrl dwrl\r\n"
 				+ "where dwrl.GWVDWRL_CODE = :DW_ACCESS";
@@ -312,54 +313,140 @@ public class GwaesacFormController extends DefaultFormController {
 			if (gwvdwrlCResults != null) {
 				dwAccessDesc = gwvdwrlCResults.getStr(0);
 				gwbesacElement.setDwAccessDesc(dwAccessDesc);
+				getGCodeClass().nextItem();
 			} else {
-				GNls.Fget(toStr("GWAESAC-0002"), toStr("FORM"),
-						toStr("*ERROR* Invalid Degreeworks Access; press LIST for valid codes."));
+				errorMessage(GNls.Fget(toStr("GWAESAC-0002"), toStr("FORM"),
+						toStr("*ERROR* Invalid Degreeworks Access; press LIST for valid codes.")));
+				throw new ApplicationException();
 			}
 		} finally {
 			gwvdwrlCursor.close();
 		}
 	}
 
-	@ActionTrigger(action = "POST-TEXT-ITEM", item = "GWBESAC_DW_ACCESS", function = KeyFunction.ITEM_OUT)
-	public void gwbesacDwAccess_itemOut() {
-		GwbesacAdapter gwbesacElement = (GwbesacAdapter) this.getFormModel().getGwbesac().getRowAdapter(true);
-		if (gwbesacElement.getGwbesacDwAccess().isNull()) {
-			gwbesacElement.setDwAccessDesc(toStr(""));
-		} else {
-			getTask().getGoqrpls().getGSearch().postTextCode();
-			getTask().getGoqrpls().gCheckFailure();
-		}
-	}
+//	@ActionTrigger(action = "POST-TEXT-ITEM", item = "GWBESAC_DW_ACCESS", function = KeyFunction.ITEM_OUT)
+//	public void gwbesacDwAccess_itemOut() {
+//		GwbesacAdapter gwbesacElement = (GwbesacAdapter) this.getFormModel().getGwbesac().getRowAdapter(true);
+//		if (gwbesacElement.getGwbesacDwAccess().isNull()) {
+//			gwbesacElement.setDwAccessDesc(toStr(""));
+//		} else {
+//			getTask().getGoqrpls().getGSearch().postTextCode();
+//			getTask().getGoqrpls().gCheckFailure();
+//		}
+//	}
 
-	@ActionTrigger(action = "POST-CHANGE", item = "GWVESAC_DW_ACCESS")
-	public void gwbesacDwAccess_PostChange() {
-
-		GwbesacAdapter gwbesacElement = (GwbesacAdapter) this.getFormModel().getGwbesac().getRowAdapter(true);
-		String gwvdwrlC = "select dwrl.GWVDWRL_DESC\r\n" + "from gwvdwrl dwrl\r\n"
-				+ "where dwrl.GWVDWRL_CODE = :DW_ACCESS";
-		NString dwAccessDesc = NString.getNull();
-		DataCursor gwvdwrlCursor = new DataCursor(gwvdwrlC);
-		try {
-			// Setting query parameters
-			gwvdwrlCursor.addParameter("DW_ACCESS", gwbesacElement.getGwbesacDwAccess());
-			gwvdwrlCursor.open();
-			ResultSet gwvdwrlCResults = gwvdwrlCursor.fetchInto();
-			if (gwvdwrlCResults != null) {
-				dwAccessDesc = gwvdwrlCResults.getStr(0);
-				gwbesacElement.setDwAccessDesc(dwAccessDesc);
-			} else {
-				GNls.Fget(toStr("GWAESAC-0002"), toStr("FORM"),
-						toStr("*ERROR* Invalid Degreeworks Access; press LIST for valid codes."));
-			}
-		} finally {
-			gwvdwrlCursor.close();
-		}
-
-	}
+//	@ActionTrigger(action = "POST-CHANGE", item = "GWBESAC_DW_ACCESS")
+//	public void gwbesacDwAccess_PostChange() {
+//
+//		GwbesacAdapter gwbesacElement = (GwbesacAdapter) this.getFormModel().getGwbesac().getRowAdapter(true);
+//		String gwvdwrlC = "select dwrl.GWVDWRL_DESC\r\n" + "from gwvdwrl dwrl\r\n"
+//				+ "where dwrl.GWVDWRL_CODE = :DW_ACCESS";
+//		NString dwAccessDesc = NString.getNull();
+//		DataCursor gwvdwrlCursor = new DataCursor(gwvdwrlC);
+//		try {
+//			// Setting query parameters
+//			gwvdwrlCursor.addParameter("DW_ACCESS", gwbesacElement.getGwbesacDwAccess());
+//			gwvdwrlCursor.open();
+//			ResultSet gwvdwrlCResults = gwvdwrlCursor.fetchInto();
+//			if (gwvdwrlCResults != null) {
+//				dwAccessDesc = gwvdwrlCResults.getStr(0);
+//				gwbesacElement.setDwAccessDesc(dwAccessDesc);
+//			} else {
+//				errorMessage(GNls.Fget(toStr("GWAESAC-0002"), toStr("FORM"),
+//						toStr("*ERROR* Invalid Degreeworks Access; press LIST for valid codes.")));
+//				throw new ApplicationException();
+//			}
+//		} finally {
+//			gwvdwrlCursor.close();
+//		}
+//
+//	}
 
 	@ActionTrigger(action = "WHEN-MOUSE-CLICK", item = "GWBESAC_DW_ACCESS_LBT")
 	public void gwbesacDwAccess_Lbt_click() {
 		getGIconBtnClass().whenMouseClick();
 	}
+
+	@ValidationTrigger(item = "GWBESAC_DW_ACCESS")
+	public void gwbesacDwAccess_validation() {
+		GwbesacAdapter gwbesacElement = (GwbesacAdapter) this.getFormModel().getGwbesac().getRowAdapter(true);
+
+		if (gwbesacElement == null)
+			return;
+		if (gwbesacElement.getGwbesacDwAccess().isNull()) {
+			gwbesacElement.setDwAccessDesc(toStr(""));
+			return;
+		}
+
+		String sqlptiCursor = "select dwrl.GWVDWRL_DESC\r\n" + "from gwvdwrl dwrl\r\n"
+				+ "where dwrl.GWVDWRL_CODE = :DW_ACCESS";
+		DataCursor ptiCursor = new DataCursor(sqlptiCursor);
+		try {
+			// Setting query parameters
+			ptiCursor.addParameter("DW_ACCESS", gwbesacElement.getGwbesacDwAccess());
+			ptiCursor.open();
+			ResultSet ptiCursorResults = ptiCursor.fetchInto();
+			if (ptiCursorResults != null) {
+				gwbesacElement.setDwAccessDesc(ptiCursorResults.getStr(0));
+			} else {
+				errorMessage(GNls.Fget(toStr("GWAESAC-0002"), toStr("FORM"),
+						toStr("*ERROR* Invalid Degreeworks Access; press LIST for valid codes.")));
+				throw new ApplicationException();
+			}
+		} catch (Exception e) {
+			// Dump the exception to the error stream
+			e.printStackTrace();
+			// Dump exception so it can be seen via console.
+			System.out.println("Error - Degreeworks Access validation : " + e);
+			throw new ApplicationException();
+		} finally {
+			ptiCursor.close();
+		}
+	}
+
+	@ValidationTrigger(item = "GWBESAC_EAB_ENABLED_IND")
+	public void gwbesacEabEnabledInd_validation() {
+		GwbesacAdapter gwbesacElement = (GwbesacAdapter) this.getFormModel().getGwbesac().getRowAdapter(true);
+
+		if (gwbesacElement == null)
+			return;
+
+		NString eabEnabledInd = gwbesacElement.getGwbesacEabEnabledInd();
+		if (!(eabEnabledInd.equals("Y") || eabEnabledInd.equals("N"))) {
+				errorMessage(GNls.Fget(toStr("GWAESAC-0003"), toStr("FORM"),
+						toStr("*ERROR* EAB Enabled Indicator must be Y or N.")));
+				throw new ApplicationException();
+		}
+	}
+
+	@ValidationTrigger(item = "GWBESAC_DW_ENABLED_IND")
+	public void gwbesacDwEnabledInd_validation() {
+		GwbesacAdapter gwbesacElement = (GwbesacAdapter) this.getFormModel().getGwbesac().getRowAdapter(true);
+
+		if (gwbesacElement == null)
+			return;
+
+		NString dwEnabledInd = gwbesacElement.getGwbesacDwEnabledInd();
+		if (!(dwEnabledInd.equals("Y") || dwEnabledInd.equals("N"))) {
+				errorMessage(GNls.Fget(toStr("GWAESAC-0004"), toStr("FORM"),
+						toStr("*ERROR* Degreeworks Enabled Indicator must be Y or N.")));
+				throw new ApplicationException();
+		}
+	}
+
+	@ValidationTrigger(item = "GWBESAC_STAFF_IND")
+	public void gwbesacStaffInd_validation() {
+		GwbesacAdapter gwbesacElement = (GwbesacAdapter) this.getFormModel().getGwbesac().getRowAdapter(true);
+
+		if (gwbesacElement == null)
+			return;
+
+		NString staffInd = gwbesacElement.getGwbesacStaffInd();
+		if (!(staffInd.equals("Y") || staffInd.equals("N"))) {
+				errorMessage(GNls.Fget(toStr("GWAESAC-0005"), toStr("FORM"),
+						toStr("*ERROR* Staff Indicator must be Y or N.")));
+				throw new ApplicationException();
+		}
+	}
+
 }

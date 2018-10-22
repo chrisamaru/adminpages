@@ -18,18 +18,18 @@
 						<textbox name="facultyInd" width="50px" height="22px" label="Faculty?" maxlength="1" block="GWBESAC" member="FACULTY_IND" datatype="String"   />
 					</gridcell>
 					<gridcell>
-						<textbox name="gwbesacStaffInd" width="50px" height="22px" label="Staff?" maxlength="1" block="GWBESAC" member="GWBESAC_STAFF_IND" datatype="String"   />
+						<textbox validation="server" name="gwbesacStaffInd" width="50px" height="22px" label="Staff?" maxlength="1" block="GWBESAC" member="GWBESAC_STAFF_IND" datatype="String"   />
 					</gridcell>
 					<gridcell>
-						<textbox autoskip="true" case="upper" name="gwbesacDwAccess" width="75px" height="22px" keyactions="NEXT_ITEM" label="Degreeworks Access" maxlength="16" block="GWBESAC" member="GWBESAC_DW_ACCESS" style="ui-buttoninput" datatype="String" />
+						<textbox validation="server" autoskip="true" case="upper" name="gwbesacDwAccess" width="75px" height="22px" keyactions="NEXT_ITEM" label="Degreeworks Access" maxlength="16" block="GWBESAC" member="GWBESAC_DW_ACCESS" style="ui-buttoninput" datatype="String" />
 						<button action="WHEN-BUTTON-PRESSED" block="GWBESAC" height="23px" icon="search" member="GWBESAC_DW_ACCESS_LBT" name="gwbesacDwAccessLbt" navigable="false" style="ui-buttoninput" width="22px"></button>
 						<text width="150px" height="22px" block="GWBESAC" member="DW_ACCESS_DESC" datatype="String" />
 					</gridcell>
 					<gridcell>
-						<textbox name="gwbesacDwEnabledInd" width="50px" height="22px" label="Degreeworks Enabled?" maxlength="1" block="GWBESAC" member="GWBESAC_DW_ENABLED_IND" datatype="String"   />
+						<textbox validation="server" name="gwbesacDwEnabledInd" width="50px" height="22px" label="Degreeworks Enabled?" maxlength="1" block="GWBESAC" member="GWBESAC_DW_ENABLED_IND" datatype="String"   />
 					</gridcell>
 					<gridcell>
-						<textbox name="gwbesacEabEnabledInd" width="50px" height="22px" label="EAB Enabled?" maxlength="1" block="GWBESAC" member="GWBESAC_EAB_ENABLED_IND" datatype="String"   />
+						<textbox validation="server" name="gwbesacEabEnabledInd" width="50px" height="22px" label="EAB Enabled?" maxlength="1" block="GWBESAC" member="GWBESAC_EAB_ENABLED_IND" datatype="String"   />
 					</gridcell>
 					<gridcell>
 						<calendar name="gwbesacActivityDate" width="50" height="22px" enabled="false" label="Activity Date" block="GWBESAC" member="GWBESAC_ACTIVITY_DATE" datatype="Date"   />

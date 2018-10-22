@@ -6,7 +6,6 @@ import net.hedtech.general.common.libraries.Goqolib.services.GCodeClass;
 import net.hedtech.general.common.libraries.Goqolib.services.GDescClass;
 import net.hedtech.general.common.libraries.Goqolib.services.GIconBtnClass;
 import net.hedtech.banner.general.necc.general.Gwaesac.GwaesacTask;
-import net.hedtech.banner.general.necc.general.Gwaesac.model.GwaesacModel;
 import morphis.foundations.core.appsupportlib.runtime.action.*;
 import morphis.foundations.core.appsupportlib.ui.KeyFunction;
 import morphis.foundations.core.types.NBool;
@@ -38,6 +37,8 @@ import static morphis.foundations.core.appsupportlib.Globals.getGlobal;
 import morphis.foundations.core.appsupportlib.runtime.events.RecordCreated;
 import java.util.EventObject;
 import morphis.foundations.core.appdatalayer.events.AfterRowDelete;
+import morphis.foundations.core.appdatalayer.events.CancelEvent;
+import morphis.foundations.core.appdatalayer.events.BeforeSave;
 
 public class GwbesacController extends DefaultBlockController {
 
@@ -116,6 +117,23 @@ public class GwbesacController extends DefaultBlockController {
 			sirasgnCursor.close();
 		}
 
+		String gwvdwrlC = "select dwrl.GWVDWRL_DESC\r\n" + "from gwvdwrl dwrl\r\n"
+				+ "where dwrl.GWVDWRL_CODE = :DW_ACCESS";
+		NString dwAccessDesc = NString.getNull();
+		DataCursor gwvdwrlCursor = new DataCursor(gwvdwrlC);
+		try {
+			// Setting query parameters
+			gwvdwrlCursor.addParameter("DW_ACCESS", gwbesacElement.getGwbesacDwAccess());
+			gwvdwrlCursor.open();
+			ResultSet gwvdwrlCResults = gwvdwrlCursor.fetchInto();
+			if (gwvdwrlCResults != null) {
+				dwAccessDesc = gwvdwrlCResults.getStr(0);
+				gwbesacElement.setDwAccessDesc(dwAccessDesc);
+			}
+		} finally {
+			gwvdwrlCursor.close();
+		}
+
 	}
 
 	@BeforeRowInsert
@@ -131,7 +149,5 @@ public class GwbesacController extends DefaultBlockController {
 		gwbesacElement.setGwbesacActivityDate(NDate.getNow());
 		gwbesacElement.setGwbesacUser(getGlobal("CURRENT_USER"));
 	}
-
-
 
 }

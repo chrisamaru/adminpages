@@ -22,7 +22,7 @@
 			<column name="GWVDWRL_DESC" type="String" size="64"/>
 		</columns>
 		<query><![CDATA[SELECT GWVDWRL_CODE, GWVDWRL_DESC
-  FROM GWVDWRL]]>
+  FROM NECC.GWVDWRL]]>
 		</query>
 		<parameters>
 		</parameters>
