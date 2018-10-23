@@ -12,16 +12,10 @@
                         <textbox block="GWBESAC" datatype="String" height="22px" label="Name" maxlength="100" member="FULL_NAME" name="fullName" width="210px"/>
                     </gridcell>
                     <gridcell>
-                        <textbox block="GWBESAC" datatype="String" height="22px" label="Advisor?" maxlength="1" member="ADVISOR_IND" name="advisorInd" width="50px"/>
-                    </gridcell>
-                    <gridcell>
-                        <textbox block="GWBESAC" datatype="String" height="22px" label="Faculty?" maxlength="1" member="FACULTY_IND" name="facultyInd" width="50px"/>
-                    </gridcell>
-                    <gridcell>
-                    	<radiogroup id="gwbesacStaffInd" block="GWBESAC" member="GWBESAC_STAFF_IND" label="Staff?" name="gwbesacStaffInd">
-                    		<radiobox group="gwbesacStaffInd" name="y_gwbesacStaffInd" value="Y" label="Yes"></radiobox>
-                    		<radiobox group="gwbesacStaffInd" name="n_gwbesacStaffInd" value="N" label="No"></radiobox>
-                    	</radiogroup>
+                        <radiogroup block="GWBESAC" id="gwbesacDwEnabledInd" label="Degreeworks Enabled?" member="GWBESAC_DW_ENABLED_IND" name="gwbesacDwEnabledInd">
+                            <radiobox group="gwbesacDwEnabledInd" label="Yes" name="y_gwbesacDwEnabledInd" value="Y"/>
+                            <radiobox group="gwbesacDwEnabledInd" label="No" name="n_gwbesacDwEnabledInd" value="N"/>
+                        </radiogroup>
                     </gridcell>
                     <gridcell>
                         <textbox autoskip="true" block="GWBESAC" case="upper" datatype="String" height="22px" keyactions="NEXT_ITEM" label="Degreeworks Access" maxlength="16" member="GWBESAC_DW_ACCESS" name="gwbesacDwAccess" style="ui-buttoninput" validation="server" width="75px"/>
@@ -29,16 +23,28 @@
                         <text block="GWBESAC" datatype="String" height="22px" member="DW_ACCESS_DESC" width="150px"/>
                     </gridcell>
                     <gridcell>
-                        <radiogroup id="gwbesacDwEnabledInd" block="GWBESAC" member="GWBESAC_DW_ENABLED_IND" label="Degreeworks Enabled?" name="gwbesacDwEnabledInd">
-                    		<radiobox group="gwbesacDwEnabledInd" name="y_gwbesacDwEnabledInd" value="Y" label="Yes"></radiobox>
-                    		<radiobox group="gwbesacDwEnabledInd" name="n_gwbesacDwEnabledInd" value="N" label="No"></radiobox>
-                    	</radiogroup>
+                        <radiogroup block="GWBESAC" id="gwbesacEabEnabledInd" label="EAB Enabled?" member="GWBESAC_EAB_ENABLED_IND" name="gwbesacEabEnabledInd">
+                            <radiobox group="gwbesacEabEnabledInd" label="Yes" name="y_gwbesacEabEnabledInd" value="Y"/>
+                            <radiobox group="gwbesacEabEnabledInd" label="No" name="n_gwbesacEabEnabledInd" value="N"/>
+                        </radiogroup>
                     </gridcell>
                     <gridcell>
-                        <radiogroup id="gwbesacEabEnabledInd" block="GWBESAC" member="GWBESAC_EAB_ENABLED_IND" label="EAB Enabled?" name="gwbesacEabEnabledInd">
-                    		<radiobox group="gwbesacEabEnabledInd" name="y_gwbesacEabEnabledInd" value="Y" label="Yes"></radiobox>
-                    		<radiobox group="gwbesacEabEnabledInd" name="n_gwbesacEabEnabledInd" value="N" label="No"></radiobox>
-                    	</radiogroup>
+                        <radiogroup block="GWBESAC" id="gwbesacStaffInd" label="Staff?" member="GWBESAC_STAFF_IND" name="gwbesacStaffInd">
+                            <radiobox group="gwbesacStaffInd" label="Yes" name="y_gwbesacStaffInd" value="Y"/>
+                            <radiobox group="gwbesacStaffInd" label="No" name="n_gwbesacStaffInd" value="N"/>
+                        </radiogroup>
+                    </gridcell>
+                    <gridcell>
+                        <radiogroup block="GWBESAC" id="gwbesacFacultyInd" label="Faculty?" member="GWBESAC_FACULTY_IND" name="gwbesacFacultyInd">
+                            <radiobox group="gwbesacFacultyInd" label="Yes" name="y_gwbesacFacultyInd" value="Y"/>
+                            <radiobox group="gwbesacFacultyInd" label="No" name="n_gwbesacFacultyInd" value="N"/>
+                        </radiogroup>
+                    </gridcell>
+                    <gridcell>
+                        <radiogroup block="GWBESAC" id="gwbesacAdvisorInd" label="Advisor?" member="GWBESAC_ADVISOR_IND" name="gwbesacAdvisorInd">
+                            <radiobox group="gwbesacAdvisorInd" label="Yes" name="y_gwbesacAdvisorInd" value="Y"/>
+                            <radiobox group="gwbesacAdvisorInd" label="No" name="n_gwbesacAdvisorInd" value="N"/>
+                        </radiogroup>
                     </gridcell>
                     <gridcell>
                         <calendar block="GWBESAC" datatype="Date" enabled="false" height="22px" label="Activity Date" member="GWBESAC_ACTIVITY_DATE" name="gwbesacActivityDate" width="50"/>

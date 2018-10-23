@@ -62,24 +62,13 @@
                     </tr>
                     <tr>
                       <td class="ui-layout-cell ui-layout-horizontal">
-                        <div data-widget="textinput" data-member="ADVISOR_IND" data-block="GWBESAC" data-type="String" id="advisorInd" data-name="advisorInd" class="ui-widget ui-textinput ui-label-position-left ui-label-align-start" data-maxlength="1">
-                          <label for="#advisorInd" style="">{{#i18n}}"Advisor?"{{/i18n}}</label><input type="text" id="#advisorInd" name="advisorInd" style="height: 22px; width: 50px; " class="ui-widget-content ui-corner-all">
-                        </div>
-                      </td><td class="ui-layout-cell ui-layout-horizontal">
-                        <div data-widget="textinput" data-member="FACULTY_IND" data-block="GWBESAC" data-type="String" id="facultyInd" data-name="facultyInd" class="ui-widget ui-textinput ui-label-position-left ui-label-align-start" data-maxlength="1">
-                          <label for="#facultyInd" style="">{{#i18n}}"Faculty?"{{/i18n}}</label><input type="text" id="#facultyInd" name="facultyInd" style="height: 22px; width: 50px; " class="ui-widget-content ui-corner-all">
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="ui-layout-cell ui-layout-horizontal">
-                        <div data-widget="radiogroup" data-member="GWBESAC_STAFF_IND" data-block="GWBESAC" id="gwbesacStaffInd" data-name="gwbesacStaffInd" class="ui-widget ui-radiogroup ui-label-position-left ui-label-align-start  ui-layout-horizontal">
-                          <label style="">{{#i18n}}"Staff?"{{/i18n}}</label>
-                          <div id="y_gwbesacStaffInd_y_gwbesacStaffInd" data-name="y_gwbesacStaffInd" class="ui-widget ui-radiobox ui-label-position-right ui-label-align-start">
-                            <input name="gwbesacStaffInd" value="Y" type="radio" id="#gwbesacStaffInd_y_gwbesacStaffInd"><label id="#gwbesacStaffInd_y_gwbesacStaffInd" for="#gwbesacStaffInd_y_gwbesacStaffInd">{{#i18n}}"Yes"{{/i18n}}</label>
+                        <div data-widget="radiogroup" data-member="GWBESAC_DW_ENABLED_IND" data-block="GWBESAC" id="gwbesacDwEnabledInd" data-name="gwbesacDwEnabledInd" class="ui-widget ui-radiogroup ui-label-position-left ui-label-align-start  ui-layout-horizontal">
+                          <label style="">{{#i18n}}"Degreeworks Enabled?"{{/i18n}}</label>
+                          <div id="y_gwbesacDwEnabledInd_y_gwbesacDwEnabledInd" data-name="y_gwbesacDwEnabledInd" class="ui-widget ui-radiobox ui-label-position-right ui-label-align-start">
+                            <input name="gwbesacDwEnabledInd" value="Y" type="radio" id="#gwbesacDwEnabledInd_y_gwbesacDwEnabledInd"><label id="#gwbesacDwEnabledInd_y_gwbesacDwEnabledInd" for="#gwbesacDwEnabledInd_y_gwbesacDwEnabledInd">{{#i18n}}"Yes"{{/i18n}}</label>
                           </div>
-                          <div id="n_gwbesacStaffInd_n_gwbesacStaffInd" data-name="n_gwbesacStaffInd" class="ui-widget ui-radiobox ui-label-position-right ui-label-align-start">
-                            <input name="gwbesacStaffInd" value="N" type="radio" id="#gwbesacStaffInd_n_gwbesacStaffInd"><label id="#gwbesacStaffInd_n_gwbesacStaffInd" for="#gwbesacStaffInd_n_gwbesacStaffInd">{{#i18n}}"No"{{/i18n}}</label>
+                          <div id="n_gwbesacDwEnabledInd_n_gwbesacDwEnabledInd" data-name="n_gwbesacDwEnabledInd" class="ui-widget ui-radiobox ui-label-position-right ui-label-align-start">
+                            <input name="gwbesacDwEnabledInd" value="N" type="radio" id="#gwbesacDwEnabledInd_n_gwbesacDwEnabledInd"><label id="#gwbesacDwEnabledInd_n_gwbesacDwEnabledInd" for="#gwbesacDwEnabledInd_n_gwbesacDwEnabledInd">{{#i18n}}"No"{{/i18n}}</label>
                           </div>
                         </div>
                       </td><td class="ui-layout-cell ui-layout-horizontal">
@@ -92,16 +81,6 @@
                     </tr>
                     <tr>
                       <td class="ui-layout-cell ui-layout-horizontal">
-                        <div data-widget="radiogroup" data-member="GWBESAC_DW_ENABLED_IND" data-block="GWBESAC" id="gwbesacDwEnabledInd" data-name="gwbesacDwEnabledInd" class="ui-widget ui-radiogroup ui-label-position-left ui-label-align-start  ui-layout-horizontal">
-                          <label style="">{{#i18n}}"Degreeworks Enabled?"{{/i18n}}</label>
-                          <div id="y_gwbesacDwEnabledInd_y_gwbesacDwEnabledInd" data-name="y_gwbesacDwEnabledInd" class="ui-widget ui-radiobox ui-label-position-right ui-label-align-start">
-                            <input name="gwbesacDwEnabledInd" value="Y" type="radio" id="#gwbesacDwEnabledInd_y_gwbesacDwEnabledInd"><label id="#gwbesacDwEnabledInd_y_gwbesacDwEnabledInd" for="#gwbesacDwEnabledInd_y_gwbesacDwEnabledInd">{{#i18n}}"Yes"{{/i18n}}</label>
-                          </div>
-                          <div id="n_gwbesacDwEnabledInd_n_gwbesacDwEnabledInd" data-name="n_gwbesacDwEnabledInd" class="ui-widget ui-radiobox ui-label-position-right ui-label-align-start">
-                            <input name="gwbesacDwEnabledInd" value="N" type="radio" id="#gwbesacDwEnabledInd_n_gwbesacDwEnabledInd"><label id="#gwbesacDwEnabledInd_n_gwbesacDwEnabledInd" for="#gwbesacDwEnabledInd_n_gwbesacDwEnabledInd">{{#i18n}}"No"{{/i18n}}</label>
-                          </div>
-                        </div>
-                      </td><td class="ui-layout-cell ui-layout-horizontal">
                         <div data-widget="radiogroup" data-member="GWBESAC_EAB_ENABLED_IND" data-block="GWBESAC" id="gwbesacEabEnabledInd" data-name="gwbesacEabEnabledInd" class="ui-widget ui-radiogroup ui-label-position-left ui-label-align-start  ui-layout-horizontal">
                           <label style="">{{#i18n}}"EAB Enabled?"{{/i18n}}</label>
                           <div id="y_gwbesacEabEnabledInd_y_gwbesacEabEnabledInd" data-name="y_gwbesacEabEnabledInd" class="ui-widget ui-radiobox ui-label-position-right ui-label-align-start">
@@ -109,6 +88,39 @@
                           </div>
                           <div id="n_gwbesacEabEnabledInd_n_gwbesacEabEnabledInd" data-name="n_gwbesacEabEnabledInd" class="ui-widget ui-radiobox ui-label-position-right ui-label-align-start">
                             <input name="gwbesacEabEnabledInd" value="N" type="radio" id="#gwbesacEabEnabledInd_n_gwbesacEabEnabledInd"><label id="#gwbesacEabEnabledInd_n_gwbesacEabEnabledInd" for="#gwbesacEabEnabledInd_n_gwbesacEabEnabledInd">{{#i18n}}"No"{{/i18n}}</label>
+                          </div>
+                        </div>
+                      </td><td class="ui-layout-cell ui-layout-horizontal">
+                        <div data-widget="radiogroup" data-member="GWBESAC_STAFF_IND" data-block="GWBESAC" id="gwbesacStaffInd" data-name="gwbesacStaffInd" class="ui-widget ui-radiogroup ui-label-position-left ui-label-align-start  ui-layout-horizontal">
+                          <label style="">{{#i18n}}"Staff?"{{/i18n}}</label>
+                          <div id="y_gwbesacStaffInd_y_gwbesacStaffInd" data-name="y_gwbesacStaffInd" class="ui-widget ui-radiobox ui-label-position-right ui-label-align-start">
+                            <input name="gwbesacStaffInd" value="Y" type="radio" id="#gwbesacStaffInd_y_gwbesacStaffInd"><label id="#gwbesacStaffInd_y_gwbesacStaffInd" for="#gwbesacStaffInd_y_gwbesacStaffInd">{{#i18n}}"Yes"{{/i18n}}</label>
+                          </div>
+                          <div id="n_gwbesacStaffInd_n_gwbesacStaffInd" data-name="n_gwbesacStaffInd" class="ui-widget ui-radiobox ui-label-position-right ui-label-align-start">
+                            <input name="gwbesacStaffInd" value="N" type="radio" id="#gwbesacStaffInd_n_gwbesacStaffInd"><label id="#gwbesacStaffInd_n_gwbesacStaffInd" for="#gwbesacStaffInd_n_gwbesacStaffInd">{{#i18n}}"No"{{/i18n}}</label>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="ui-layout-cell ui-layout-horizontal">
+                        <div data-widget="radiogroup" data-member="GWBESAC_FACULTY_IND" data-block="GWBESAC" id="gwbesacFacultyInd" data-name="gwbesacFacultyInd" class="ui-widget ui-radiogroup ui-label-position-left ui-label-align-start  ui-layout-horizontal">
+                          <label style="">{{#i18n}}"Faculty?"{{/i18n}}</label>
+                          <div id="y_gwbesacFacultyInd_y_gwbesacFacultyInd" data-name="y_gwbesacFacultyInd" class="ui-widget ui-radiobox ui-label-position-right ui-label-align-start">
+                            <input name="gwbesacFacultyInd" value="Y" type="radio" id="#gwbesacFacultyInd_y_gwbesacFacultyInd"><label id="#gwbesacFacultyInd_y_gwbesacFacultyInd" for="#gwbesacFacultyInd_y_gwbesacFacultyInd">{{#i18n}}"Yes"{{/i18n}}</label>
+                          </div>
+                          <div id="n_gwbesacFacultyInd_n_gwbesacFacultyInd" data-name="n_gwbesacFacultyInd" class="ui-widget ui-radiobox ui-label-position-right ui-label-align-start">
+                            <input name="gwbesacFacultyInd" value="N" type="radio" id="#gwbesacFacultyInd_n_gwbesacFacultyInd"><label id="#gwbesacFacultyInd_n_gwbesacFacultyInd" for="#gwbesacFacultyInd_n_gwbesacFacultyInd">{{#i18n}}"No"{{/i18n}}</label>
+                          </div>
+                        </div>
+                      </td><td class="ui-layout-cell ui-layout-horizontal">
+                        <div data-widget="radiogroup" data-member="GWBESAC_ADVISOR_IND" data-block="GWBESAC" id="gwbesacAdvisorInd" data-name="gwbesacAdvisorInd" class="ui-widget ui-radiogroup ui-label-position-left ui-label-align-start  ui-layout-horizontal">
+                          <label style="">{{#i18n}}"Advisor?"{{/i18n}}</label>
+                          <div id="y_gwbesacAdvisorInd_y_gwbesacAdvisorInd" data-name="y_gwbesacAdvisorInd" class="ui-widget ui-radiobox ui-label-position-right ui-label-align-start">
+                            <input name="gwbesacAdvisorInd" value="Y" type="radio" id="#gwbesacAdvisorInd_y_gwbesacAdvisorInd"><label id="#gwbesacAdvisorInd_y_gwbesacAdvisorInd" for="#gwbesacAdvisorInd_y_gwbesacAdvisorInd">{{#i18n}}"Yes"{{/i18n}}</label>
+                          </div>
+                          <div id="n_gwbesacAdvisorInd_n_gwbesacAdvisorInd" data-name="n_gwbesacAdvisorInd" class="ui-widget ui-radiobox ui-label-position-right ui-label-align-start">
+                            <input name="gwbesacAdvisorInd" value="N" type="radio" id="#gwbesacAdvisorInd_n_gwbesacAdvisorInd"><label id="#gwbesacAdvisorInd_n_gwbesacAdvisorInd" for="#gwbesacAdvisorInd_n_gwbesacAdvisorInd">{{#i18n}}"No"{{/i18n}}</label>
                           </div>
                         </div>
                       </td>

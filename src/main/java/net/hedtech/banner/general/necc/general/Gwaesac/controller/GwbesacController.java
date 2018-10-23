@@ -110,8 +110,12 @@ public class GwbesacController extends DefaultBlockController {
 			if (sirasgnCResults != null) {
 				advisorInd = sirasgnCResults.getStr(0);
 				facultyInd = sirasgnCResults.getStr(1);
-				gwbesacElement.setAdvisorInd(advisorInd);
-				gwbesacElement.setFacultyInd(facultyInd);
+				if (gwbesacElement.getGwbesacAdvisorInd().isNull()) {
+					gwbesacElement.setGwbesacAdvisorInd(advisorInd);
+				}
+				if (gwbesacElement.getGwbesacFacultyInd().isNull()) {
+					gwbesacElement.setGwbesacFacultyInd(facultyInd);
+				}
 			}
 		} finally {
 			sirasgnCursor.close();

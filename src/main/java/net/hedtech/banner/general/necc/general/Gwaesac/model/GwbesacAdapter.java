@@ -101,23 +101,13 @@ public class GwbesacAdapter extends BaseRowAdapter {
 		this.setValue("FULL_NAME", value.getValue());
 	}
 
-	public NString getAdvisorInd() {
-		NString v = new NString((String) this.getValue("ADVISOR_IND"));
-		return v;
-	}
+	
 
-	public void setAdvisorInd(NString value) {
-		this.setValue("ADVISOR_IND", value.getValue());
-	}
+	
 
-	public NString getFacultyInd() {
-		NString v = new NString((String) this.getValue("FACULTY_IND"));
-		return v;
-	}
+	
 
-	public void setFacultyInd(NString value) {
-		this.setValue("FACULTY_IND", value.getValue());
-	}
+	
 
 	public NString getDwAccessDesc() {
 		NString v = new NString((String) this.getValue("DW_ACCESS_DESC"));
@@ -139,6 +129,24 @@ public class GwbesacAdapter extends BaseRowAdapter {
 
 	public void setGwbesacStaffInd(NString value) {
 		this.setValue("GWBESAC_STAFF_IND", value.getValue());
+	}
+
+	public NString getGwbesacFacultyInd() {
+		NString v = new NString((String) this.getValue("GWBESAC_FACULTY_IND"));
+		return v;
+	}
+
+	public void setGwbesacFacultyInd(NString value) {
+		this.setValue("GWBESAC_FACULTY_IND", value.getValue());
+	}
+
+	public NString getGwbesacAdvisorInd() {
+		NString v = new NString((String) this.getValue("GWBESAC_ADVISOR_IND"));
+		return v;
+	}
+
+	public void setGwbesacAdvisorInd(NString value) {
+		this.setValue("GWBESAC_ADVISOR_IND", value.getValue());
 	}
 
 	public java.sql.RowId getROWID() {
