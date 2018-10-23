@@ -25,14 +25,9 @@ public class GwbesacAdapter extends BaseRowAdapter {
 		this.setValue("GWBESAC_PIDM", value.getValue());
 	}
 
-	public NString getGwbesacStaffInd() {
-		NString v = new NString((String)this.getValue("GWBESAC_STAFF_IND"));
-		return v;
-	}
 	
-	public void setGwbesacStaffInd(NString value) {
-		this.setValue("GWBESAC_STAFF_IND", value.getValue());
-	}
+	
+	
 
 	public NString getGwbesacDwAccess() {
 		NString v = new NString((String)this.getValue("GWBESAC_DW_ACCESS"));
@@ -131,6 +126,19 @@ public class GwbesacAdapter extends BaseRowAdapter {
 
 	public void setDwAccessDesc(NString value) {
 		this.setValue("DW_ACCESS_DESC", value.getValue());
+	}
+
+	
+
+	
+
+	public NString getGwbesacStaffInd() {
+		NString v = new NString((String) this.getValue("GWBESAC_STAFF_IND"));
+		return v;
+	}
+
+	public void setGwbesacStaffInd(NString value) {
+		this.setValue("GWBESAC_STAFF_IND", value.getValue());
 	}
 
 	public java.sql.RowId getROWID() {

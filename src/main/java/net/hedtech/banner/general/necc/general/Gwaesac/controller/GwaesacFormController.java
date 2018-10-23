@@ -434,19 +434,19 @@ public class GwaesacFormController extends DefaultFormController {
 		}
 	}
 
-	@ValidationTrigger(item = "GWBESAC_STAFF_IND")
-	public void gwbesacStaffInd_validation() {
-		GwbesacAdapter gwbesacElement = (GwbesacAdapter) this.getFormModel().getGwbesac().getRowAdapter(true);
-
-		if (gwbesacElement == null)
-			return;
-
-		NString staffInd = gwbesacElement.getGwbesacStaffInd();
-		if (!(staffInd.equals("Y") || staffInd.equals("N"))) {
-				errorMessage(GNls.Fget(toStr("GWAESAC-0005"), toStr("FORM"),
-						toStr("*ERROR* Staff Indicator must be Y or N.")));
-				throw new ApplicationException();
-		}
-	}
+//	@ValidationTrigger(item = "GWBESAC_STAFF_IND")
+//	public void gwbesacStaffInd_validation() {
+//		GwbesacAdapter gwbesacElement = (GwbesacAdapter) this.getFormModel().getGwbesac().getRowAdapter(true);
+//
+//		if (gwbesacElement == null)
+//			return;
+//
+//		NString staffInd = gwbesacElement.getGwbesacStaffInd();
+//		if (!(staffInd.equals("Y") || staffInd.equals("N"))) {
+//				errorMessage(GNls.Fget(toStr("GWAESAC-0005"), toStr("FORM"),
+//						toStr("*ERROR* Staff Indicator must be Y or N.")));
+//				throw new ApplicationException();
+//		}
+//	}
 
 }

@@ -73,8 +73,14 @@
                     </tr>
                     <tr>
                       <td class="ui-layout-cell ui-layout-horizontal">
-                        <div data-widget="textinput" data-member="GWBESAC_STAFF_IND" data-block="GWBESAC" data-type="String" data-validation="server" id="gwbesacStaffInd" data-name="gwbesacStaffInd" class="ui-widget ui-textinput ui-label-position-left ui-label-align-start" data-maxlength="1">
-                          <label for="#gwbesacStaffInd" style="">{{#i18n}}"Staff?"{{/i18n}}</label><input type="text" id="#gwbesacStaffInd" name="gwbesacStaffInd" style="height: 22px; width: 50px; " class="ui-widget-content ui-corner-all">
+                        <div data-widget="radiogroup" data-member="GWBESAC_STAFF_IND" data-block="GWBESAC" id="gwbesacStaffInd" data-name="gwbesacStaffInd" class="ui-widget ui-radiogroup ui-label-position-left ui-label-align-start  ui-layout-horizontal">
+                          <label style="">{{#i18n}}"Staff?"{{/i18n}}</label>
+                          <div id="y_gwbesacStaffInd_y_gwbesacStaffInd" data-name="y_gwbesacStaffInd" class="ui-widget ui-radiobox ui-label-position-right ui-label-align-start">
+                            <input name="gwbesacStaffInd" value="Y" type="radio" id="#gwbesacStaffInd_y_gwbesacStaffInd"><label id="#gwbesacStaffInd_y_gwbesacStaffInd" for="#gwbesacStaffInd_y_gwbesacStaffInd">{{#i18n}}"Yes"{{/i18n}}</label>
+                          </div>
+                          <div id="n_gwbesacStaffInd_n_gwbesacStaffInd" data-name="n_gwbesacStaffInd" class="ui-widget ui-radiobox ui-label-position-right ui-label-align-start">
+                            <input name="gwbesacStaffInd" value="N" type="radio" id="#gwbesacStaffInd_n_gwbesacStaffInd"><label id="#gwbesacStaffInd_n_gwbesacStaffInd" for="#gwbesacStaffInd_n_gwbesacStaffInd">{{#i18n}}"No"{{/i18n}}</label>
+                          </div>
                         </div>
                       </td><td class="ui-layout-cell ui-layout-horizontal">
                         <div data-widget="textinput" data-member="GWBESAC_DW_ACCESS" data-block="GWBESAC" data-type="String" data-validation="server" data-keyactions="NEXT_ITEM" class="ui-widget ui-textinput ui-label-position-left ui-label-align-start ui-buttoninput" id="gwbesacDwAccess" data-name="gwbesacDwAccess" data-maxlength="16" data-autoskip="true" data-case="upper">
@@ -86,11 +92,11 @@
                     </tr>
                     <tr>
                       <td class="ui-layout-cell ui-layout-horizontal">
-                        <div data-widget="textinput" data-member="GWBESAC_DW_ENABLED_IND" data-block="GWBESAC" data-type="String" data-validation="server" id="gwbesacDwEnabledInd" data-name="gwbesacDwEnabledInd" class="ui-widget ui-textinput ui-label-position-left ui-label-align-start" data-maxlength="1">
+                        <div data-widget="textinput" data-member="GWBESAC_DW_ENABLED_IND" data-block="GWBESAC" data-type="String" data-validation="server" id="gwbesacDwEnabledInd" data-name="gwbesacDwEnabledInd" class="ui-widget ui-textinput ui-label-position-left ui-label-align-start" data-maxlength="1" data-case="upper">
                           <label for="#gwbesacDwEnabledInd" style="">{{#i18n}}"Degreeworks Enabled?"{{/i18n}}</label><input type="text" id="#gwbesacDwEnabledInd" name="gwbesacDwEnabledInd" style="height: 22px; width: 50px; " class="ui-widget-content ui-corner-all">
                         </div>
                       </td><td class="ui-layout-cell ui-layout-horizontal">
-                        <div data-widget="textinput" data-member="GWBESAC_EAB_ENABLED_IND" data-block="GWBESAC" data-type="String" data-validation="server" id="gwbesacEabEnabledInd" data-name="gwbesacEabEnabledInd" class="ui-widget ui-textinput ui-label-position-left ui-label-align-start" data-maxlength="1">
+                        <div data-widget="textinput" data-member="GWBESAC_EAB_ENABLED_IND" data-block="GWBESAC" data-type="String" data-validation="server" id="gwbesacEabEnabledInd" data-name="gwbesacEabEnabledInd" class="ui-widget ui-textinput ui-label-position-left ui-label-align-start" data-maxlength="1" data-case="upper">
                           <label for="#gwbesacEabEnabledInd" style="">{{#i18n}}"EAB Enabled?"{{/i18n}}</label><input type="text" id="#gwbesacEabEnabledInd" name="gwbesacEabEnabledInd" style="height: 22px; width: 50px; " class="ui-widget-content ui-corner-all">
                         </div>
                       </td>

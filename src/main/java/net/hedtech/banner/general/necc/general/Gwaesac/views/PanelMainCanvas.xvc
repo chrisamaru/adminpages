@@ -1,44 +1,47 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<config layout="horizontal" xmlns="urn:schemas:morphis:frames:view" xmlns:xl="urn:schemas:morphis:frames:logic">
-	<interactionBlock name="GWBESAC" />
-	<panel id="MAIN_CANVAS" name="MAIN_CANVAS" width="100%"  class="StackedCanvas">
-		<collapsiblepanel label="mainWindow.title" name="rect47" width="100%">
-			<panel width="100%">
-				<gridlayout cols="2" orientation="horizontal">
-					<gridcell>
-						<textbox name="neccId" width="100px" height="22px" label="Necc Id" maxlength="9" block="GWBESAC" member="NECC_ID" datatype="String"   />
-					</gridcell>
-					<gridcell>
-						<textbox name="fullName" width="210px" height="22px" label="Name" maxlength="100" block="GWBESAC" member="FULL_NAME" datatype="String"   />
-					</gridcell>
-					<gridcell>
-						<textbox name="advisorInd" width="50px" height="22px" label="Advisor?" maxlength="1" block="GWBESAC" member="ADVISOR_IND" datatype="String"   />
-					</gridcell>
-					<gridcell>
-						<textbox name="facultyInd" width="50px" height="22px" label="Faculty?" maxlength="1" block="GWBESAC" member="FACULTY_IND" datatype="String"   />
-					</gridcell>
-					<gridcell>
-						<textbox validation="server" name="gwbesacStaffInd" width="50px" height="22px" label="Staff?" maxlength="1" block="GWBESAC" member="GWBESAC_STAFF_IND" datatype="String"   />
-					</gridcell>
-					<gridcell>
-						<textbox validation="server" autoskip="true" case="upper" name="gwbesacDwAccess" width="75px" height="22px" keyactions="NEXT_ITEM" label="Degreeworks Access" maxlength="16" block="GWBESAC" member="GWBESAC_DW_ACCESS" style="ui-buttoninput" datatype="String" />
-						<button action="WHEN-BUTTON-PRESSED" block="GWBESAC" height="23px" icon="search" member="GWBESAC_DW_ACCESS_LBT" name="gwbesacDwAccessLbt" navigable="false" style="ui-buttoninput" width="22px"></button>
-						<text width="150px" height="22px" block="GWBESAC" member="DW_ACCESS_DESC" datatype="String" />
-					</gridcell>
-					<gridcell>
-						<textbox validation="server" name="gwbesacDwEnabledInd" width="50px" height="22px" label="Degreeworks Enabled?" maxlength="1" block="GWBESAC" member="GWBESAC_DW_ENABLED_IND" datatype="String"   />
-					</gridcell>
-					<gridcell>
-						<textbox validation="server" name="gwbesacEabEnabledInd" width="50px" height="22px" label="EAB Enabled?" maxlength="1" block="GWBESAC" member="GWBESAC_EAB_ENABLED_IND" datatype="String"   />
-					</gridcell>
-					<gridcell>
-						<calendar name="gwbesacActivityDate" width="50" height="22px" enabled="false" label="Activity Date" block="GWBESAC" member="GWBESAC_ACTIVITY_DATE" datatype="Date"   />
-					</gridcell>
-					<gridcell>
-						<textbox name="gwbesacUser" width="245px" height="22px" enabled="false" label="User" maxlength="35" block="GWBESAC" member="GWBESAC_USER" datatype="String"   />
-					</gridcell>
-				</gridlayout>
-			</panel>
-		</collapsiblepanel>
-	</panel>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<config xmlns="urn:schemas:morphis:frames:view" xmlns:xl="urn:schemas:morphis:frames:logic" layout="horizontal">
+    <interactionBlock name="GWBESAC"/>
+    <panel class="StackedCanvas" id="MAIN_CANVAS" name="MAIN_CANVAS" width="100%">
+        <collapsiblepanel label="mainWindow.title" name="rect47" width="100%">
+            <panel width="100%">
+                <gridlayout cols="2" orientation="horizontal">
+                    <gridcell>
+                        <textbox block="GWBESAC" datatype="String" height="22px" label="Necc Id" maxlength="9" member="NECC_ID" name="neccId" width="100px"/>
+                    </gridcell>
+                    <gridcell>
+                        <textbox block="GWBESAC" datatype="String" height="22px" label="Name" maxlength="100" member="FULL_NAME" name="fullName" width="210px"/>
+                    </gridcell>
+                    <gridcell>
+                        <textbox block="GWBESAC" datatype="String" height="22px" label="Advisor?" maxlength="1" member="ADVISOR_IND" name="advisorInd" width="50px"/>
+                    </gridcell>
+                    <gridcell>
+                        <textbox block="GWBESAC" datatype="String" height="22px" label="Faculty?" maxlength="1" member="FACULTY_IND" name="facultyInd" width="50px"/>
+                    </gridcell>
+                    <gridcell>
+                    	<radiogroup id="gwbesacStaffInd" block="GWBESAC" member="GWBESAC_STAFF_IND" label="Staff?" name="gwbesacStaffInd">
+                    		<radiobox group="gwbesacStaffInd" name="y_gwbesacStaffInd" value="Y" label="Yes"></radiobox>
+                    		<radiobox group="gwbesacStaffInd" name="n_gwbesacStaffInd" value="N" label="No"></radiobox>
+                    	</radiogroup>
+                    </gridcell>
+                    <gridcell>
+                        <textbox autoskip="true" block="GWBESAC" case="upper" datatype="String" height="22px" keyactions="NEXT_ITEM" label="Degreeworks Access" maxlength="16" member="GWBESAC_DW_ACCESS" name="gwbesacDwAccess" style="ui-buttoninput" validation="server" width="75px"/>
+                        <button action="WHEN-BUTTON-PRESSED" block="GWBESAC" height="23px" icon="search" member="GWBESAC_DW_ACCESS_LBT" name="gwbesacDwAccessLbt" navigable="false" style="ui-buttoninput" width="22px"/>
+                        <text block="GWBESAC" datatype="String" height="22px" member="DW_ACCESS_DESC" width="150px"/>
+                    </gridcell>
+                    <gridcell>
+                        <textbox block="GWBESAC" case="upper" datatype="String" height="22px" label="Degreeworks Enabled?" maxlength="1" member="GWBESAC_DW_ENABLED_IND" name="gwbesacDwEnabledInd" validation="server" width="50px"/>
+                    </gridcell>
+                    <gridcell>
+                        <textbox block="GWBESAC" case="upper" datatype="String" height="22px" label="EAB Enabled?" maxlength="1" member="GWBESAC_EAB_ENABLED_IND" name="gwbesacEabEnabledInd" validation="server" width="50px"/>
+                    </gridcell>
+                    <gridcell>
+                        <calendar block="GWBESAC" datatype="Date" enabled="false" height="22px" label="Activity Date" member="GWBESAC_ACTIVITY_DATE" name="gwbesacActivityDate" width="50"/>
+                    </gridcell>
+                    <gridcell>
+                        <textbox block="GWBESAC" datatype="String" enabled="false" height="22px" label="User" maxlength="35" member="GWBESAC_USER" name="gwbesacUser" width="245px"/>
+                    </gridcell>
+                </gridlayout>
+            </panel>
+        </collapsiblepanel>
+    </panel>
 </config>

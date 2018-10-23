@@ -35,9 +35,12 @@
             <Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="MAIN_CANVAS" Enabled="false" Id="FULL_NAME" Type="TextItem"/>
             <Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="MAIN_CANVAS" Enabled="false" Id="FACULTY_IND" Type="TextItem"/>
             <Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="MAIN_CANVAS" Enabled="false" Id="ADVISOR_IND" Type="TextItem"/>
-            <Item CanvasName="MAIN_CANVAS" Id="GWBESAC_STAFF_IND" MaxLength="1" Type="TextItem"/>
+            <Item CanvasName="MAIN_CANVAS" Id="GWBESAC_STAFF_IND" Type="RadioGroup">
+                <Item Id="STAFF_IND_Y" Type="RadioButton"/>
+                <Item Id="STAFF_IND_N" Type="RadioButton"/>
+            </Item>
             <Item CanvasName="MAIN_CANVAS" Id="GWBESAC_DW_ACCESS" Lov="LOV_GWVDWRL_RG" Type="TextItem"/>
-        	<Item CanvasName="MAIN_CANVAS" Id="GWBESAC_DW_ACCESS_LBT" Type="Button"/>
+            <Item CanvasName="MAIN_CANVAS" Id="GWBESAC_DW_ACCESS_LBT" Type="Button"/>
             <Item CanvasName="MAIN_CANVAS" Id="DW_ACCESS_DESC" Type="TextItem"/>
             <Item CanvasName="MAIN_CANVAS" Id="GWBESAC_DW_ENABLED_IND" Type="TextItem"/>
             <Item CanvasName="MAIN_CANVAS" Id="GWBESAC_EAB_ENABLED_IND" Type="TextItem"/>

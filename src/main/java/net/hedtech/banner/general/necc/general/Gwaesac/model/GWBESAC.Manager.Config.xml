@@ -11,8 +11,6 @@
 					<item name="PIDM" businessObject="KEY_BLOCK"/>
 				</value>
 			</item>
-			<item name="GWBESAC_STAFF_IND" logicalName="gwbesacStaffInd" type="java.lang.String" physicalName="GWBESAC_STAFF_IND">
-			</item>
 			<item name="GWBESAC_DW_ACCESS" logicalName="gwbesacDwAccess" type="java.lang.String" physicalName="GWBESAC_DW_ACCESS">
 			</item>
 			<item name="GWBESAC_DW_ENABLED_IND" logicalName="gwbesacDwEnabledInd" type="java.lang.String" physicalName="GWBESAC_DW_ENABLED_IND">
@@ -31,7 +29,9 @@
 			</item>
 			<item name="FACULTY_IND" logicalName="facultyInd" type="java.lang.String" virtual="true">
 			</item>
-			<item name="DW_ACCESS_DESC" logicalName="dwAccessDesc" type="String" virtual="true">
+			<item name="DW_ACCESS_DESC" logicalName="dwAccessDesc" type="java.lang.String" virtual="true">
+			</item>
+			<item name="GWBESAC_STAFF_IND" logicalName="gwbesacStaffInd" type="String" physicalName="GWBESAC_STAFF_IND">
 			</item>
 		</items>
 		
