@@ -29,10 +29,16 @@
                         <text block="GWBESAC" datatype="String" height="22px" member="DW_ACCESS_DESC" width="150px"/>
                     </gridcell>
                     <gridcell>
-                        <textbox block="GWBESAC" case="upper" datatype="String" height="22px" label="Degreeworks Enabled?" maxlength="1" member="GWBESAC_DW_ENABLED_IND" name="gwbesacDwEnabledInd" validation="server" width="50px"/>
+                        <radiogroup id="gwbesacDwEnabledInd" block="GWBESAC" member="GWBESAC_DW_ENABLED_IND" label="Degreeworks Enabled?" name="gwbesacDwEnabledInd">
+                    		<radiobox group="gwbesacDwEnabledInd" name="y_gwbesacDwEnabledInd" value="Y" label="Yes"></radiobox>
+                    		<radiobox group="gwbesacDwEnabledInd" name="n_gwbesacDwEnabledInd" value="N" label="No"></radiobox>
+                    	</radiogroup>
                     </gridcell>
                     <gridcell>
-                        <textbox block="GWBESAC" case="upper" datatype="String" height="22px" label="EAB Enabled?" maxlength="1" member="GWBESAC_EAB_ENABLED_IND" name="gwbesacEabEnabledInd" validation="server" width="50px"/>
+                        <radiogroup id="gwbesacEabEnabledInd" block="GWBESAC" member="GWBESAC_EAB_ENABLED_IND" label="EAB Enabled?" name="gwbesacEabEnabledInd">
+                    		<radiobox group="gwbesacEabEnabledInd" name="y_gwbesacEabEnabledInd" value="Y" label="Yes"></radiobox>
+                    		<radiobox group="gwbesacEabEnabledInd" name="n_gwbesacEabEnabledInd" value="N" label="No"></radiobox>
+                    	</radiogroup>
                     </gridcell>
                     <gridcell>
                         <calendar block="GWBESAC" datatype="Date" enabled="false" height="22px" label="Activity Date" member="GWBESAC_ACTIVITY_DATE" name="gwbesacActivityDate" width="50"/>

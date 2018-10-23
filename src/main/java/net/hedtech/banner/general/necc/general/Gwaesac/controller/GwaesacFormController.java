@@ -404,35 +404,35 @@ public class GwaesacFormController extends DefaultFormController {
 		}
 	}
 
-	@ValidationTrigger(item = "GWBESAC_EAB_ENABLED_IND")
-	public void gwbesacEabEnabledInd_validation() {
-		GwbesacAdapter gwbesacElement = (GwbesacAdapter) this.getFormModel().getGwbesac().getRowAdapter(true);
+//	@ValidationTrigger(item = "GWBESAC_EAB_ENABLED_IND")
+//	public void gwbesacEabEnabledInd_validation() {
+//		GwbesacAdapter gwbesacElement = (GwbesacAdapter) this.getFormModel().getGwbesac().getRowAdapter(true);
+//
+//		if (gwbesacElement == null)
+//			return;
+//
+//		NString eabEnabledInd = gwbesacElement.getGwbesacEabEnabledInd();
+//		if (!(eabEnabledInd.equals("Y") || eabEnabledInd.equals("N"))) {
+//				errorMessage(GNls.Fget(toStr("GWAESAC-0003"), toStr("FORM"),
+//						toStr("*ERROR* EAB Enabled Indicator must be Y or N.")));
+//				throw new ApplicationException();
+//		}
+//	}
 
-		if (gwbesacElement == null)
-			return;
-
-		NString eabEnabledInd = gwbesacElement.getGwbesacEabEnabledInd();
-		if (!(eabEnabledInd.equals("Y") || eabEnabledInd.equals("N"))) {
-				errorMessage(GNls.Fget(toStr("GWAESAC-0003"), toStr("FORM"),
-						toStr("*ERROR* EAB Enabled Indicator must be Y or N.")));
-				throw new ApplicationException();
-		}
-	}
-
-	@ValidationTrigger(item = "GWBESAC_DW_ENABLED_IND")
-	public void gwbesacDwEnabledInd_validation() {
-		GwbesacAdapter gwbesacElement = (GwbesacAdapter) this.getFormModel().getGwbesac().getRowAdapter(true);
-
-		if (gwbesacElement == null)
-			return;
-
-		NString dwEnabledInd = gwbesacElement.getGwbesacDwEnabledInd();
-		if (!(dwEnabledInd.equals("Y") || dwEnabledInd.equals("N"))) {
-				errorMessage(GNls.Fget(toStr("GWAESAC-0004"), toStr("FORM"),
-						toStr("*ERROR* Degreeworks Enabled Indicator must be Y or N.")));
-				throw new ApplicationException();
-		}
-	}
+//	@ValidationTrigger(item = "GWBESAC_DW_ENABLED_IND")
+//	public void gwbesacDwEnabledInd_validation() {
+//		GwbesacAdapter gwbesacElement = (GwbesacAdapter) this.getFormModel().getGwbesac().getRowAdapter(true);
+//
+//		if (gwbesacElement == null)
+//			return;
+//
+//		NString dwEnabledInd = gwbesacElement.getGwbesacDwEnabledInd();
+//		if (!(dwEnabledInd.equals("Y") || dwEnabledInd.equals("N"))) {
+//				errorMessage(GNls.Fget(toStr("GWAESAC-0004"), toStr("FORM"),
+//						toStr("*ERROR* Degreeworks Enabled Indicator must be Y or N.")));
+//				throw new ApplicationException();
+//		}
+//	}
 
 //	@ValidationTrigger(item = "GWBESAC_STAFF_IND")
 //	public void gwbesacStaffInd_validation() {
