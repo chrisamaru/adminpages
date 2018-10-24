@@ -35,6 +35,7 @@ import morphis.foundations.core.appsupportlib.runtime.events.TaskStarted;
 import morphis.foundations.core.appsupportlib.runtime.events.TaskStartedPre;
 import net.hedtech.general.common.dbservices.GNls;
 import net.hedtech.general.common.libraries.Goqolib.services.*;
+import morphis.foundations.core.appsupportlib.model.AfterDatabaseCommit;
 
 public class GwaesacFormController extends DefaultFormController {
 
@@ -401,6 +402,31 @@ public class GwaesacFormController extends DefaultFormController {
 			throw new ApplicationException();
 		} finally {
 			ptiCursor.close();
+		}
+	}
+
+	@AfterDatabaseCommit
+	public void gwaesac_AfterDatabaseCommit(EventObject eventObject) {
+		GwbesacAdapter gwbesacElement = (GwbesacAdapter) this.getFormModel().getGwbesac().getRowAdapter(true);
+		NString currentDwAccess = getTask().getServices().getCurrentDwAccess();
+		NString dwEnabledInd = gwbesacElement.getGwbesacDwEnabledInd();
+		NString requestedDwAccess = gwbesacElement.getGwbesacDwAccess();
+		NNumber pidm = getFormModel().getKeyBlock().getPidm();
+		
+		// If Degreeworks is enabled
+		// Open a ticket in KACE to request access only if current Degreeworks access is different from requested Degreeworks access
+		if (dwEnabledInd.equals("Y")) {
+			// Degreeworks is enabled
+			if (currentDwAccess.notEquals(requestedDwAccess)) {
+				// Open the ticket and pop an alert with the ticket # (?) telling the user that a ticket has been opened
+				getTask().getServices().openTicket(pidm, toStr("G"), requestedDwAccess);
+				getTask().getServices().showTicketAlert(toStr("A ticket has been opened to give the user Degreeworks access. Please allow 1-2 business days for this to be process."));
+			}
+		} else {
+			// Degreeworks is not enabled, so open a ticket to revoke the user's access
+			// pop an alert saying that a ticket has been opened to revoke the user's access to Degreeworks
+			getTask().getServices().openTicket(pidm, toStr("R"), null);
+			getTask().getServices().showTicketAlert(toStr("A ticket has been opened to revoke the user's Degreeworks access. Please allow 1-2 business days for this to be process."));
 		}
 	}
 
