@@ -137,6 +137,8 @@ public class GwbesacController extends DefaultBlockController {
 		} finally {
 			gwvdwrlCursor.close();
 		}
+		
+		gwbesacElement.setCurrentDwAccess(getTask().getServices().getCurrentDwAccess());
 
 	}
 

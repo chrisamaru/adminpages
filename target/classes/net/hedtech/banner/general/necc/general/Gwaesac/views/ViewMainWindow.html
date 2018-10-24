@@ -71,9 +71,16 @@
                             <input name="gwbesacDwEnabledInd" value="N" type="radio" id="#gwbesacDwEnabledInd_n_gwbesacDwEnabledInd"><label id="#gwbesacDwEnabledInd_n_gwbesacDwEnabledInd" for="#gwbesacDwEnabledInd_n_gwbesacDwEnabledInd">{{#i18n}}"No"{{/i18n}}</label>
                           </div>
                         </div>
+                      </td><td class="ui-layout-cell ui-layout-horizontal"></td>
+                    </tr>
+                    <tr>
+                      <td class="ui-layout-cell ui-layout-horizontal">
+                        <div data-widget="textfield" data-member="CURRENT_DW_ACCESS" data-block="GWBESAC" data-type="String" id="currentDwAccess" data-name="currentDwAccess" class="ui-widget ui-textfield ui-label-position-left ui-label-align-start">
+                          <label style="">{{#i18n}}"Current Degreeworks Access"{{/i18n}}</label><span style="height: 22px; width: 100px; " class="ui-widget-content ui-corner-all"></span>
+                        </div>
                       </td><td class="ui-layout-cell ui-layout-horizontal">
                         <div data-widget="textinput" data-member="GWBESAC_DW_ACCESS" data-block="GWBESAC" data-type="String" data-validation="server" data-keyactions="NEXT_ITEM" class="ui-widget ui-textinput ui-label-position-left ui-label-align-start ui-buttoninput" id="gwbesacDwAccess" data-name="gwbesacDwAccess" data-maxlength="16" data-autoskip="true" data-case="upper">
-                          <label for="#gwbesacDwAccess" style="">{{#i18n}}"Degreeworks Access"{{/i18n}}</label><input type="text" id="#gwbesacDwAccess" name="gwbesacDwAccess" style="height: 22px; width: 75px; " class="ui-widget-content ui-corner-all">
+                          <label for="#gwbesacDwAccess" style="">{{#i18n}}"Requested Degreeworks Access"{{/i18n}}</label><input type="text" id="#gwbesacDwAccess" name="gwbesacDwAccess" style="height: 22px; width: 75px; " class="ui-widget-content ui-corner-all">
                         </div>
                         <button type="button" data-widget="button" data-member="GWBESAC_DW_ACCESS_LBT" data-block="GWBESAC" data-action="WHEN-BUTTON-PRESSED" class="ui-widget ui-button ui-buttoninput" data-icon="search" id="gwbesacDwAccessLbt" data-name="gwbesacDwAccessLbt" style="height: 23px; width: 22px; "></button>
                         <div data-widget="text" data-member="DW_ACCESS_DESC" data-block="GWBESAC" class="ui-widget ui-text" style="height: 22px; width: 150px; "></div>

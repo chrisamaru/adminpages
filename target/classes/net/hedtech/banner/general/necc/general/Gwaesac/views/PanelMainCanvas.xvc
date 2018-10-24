@@ -17,8 +17,12 @@
                             <radiobox group="gwbesacDwEnabledInd" label="No" name="n_gwbesacDwEnabledInd" value="N"/>
                         </radiogroup>
                     </gridcell>
+                    <gridcell></gridcell>
                     <gridcell>
-                        <textbox autoskip="true" block="GWBESAC" case="upper" datatype="String" height="22px" keyactions="NEXT_ITEM" label="Degreeworks Access" maxlength="16" member="GWBESAC_DW_ACCESS" name="gwbesacDwAccess" style="ui-buttoninput" validation="server" width="75px"/>
+                    	<textfield block="GWBESAC" member="CURRENT_DW_ACCESS" id="currentDwAccess" label="Current Degreeworks Access" height="22px" width="100px" datatype="String"></textfield>
+                    </gridcell>
+                    <gridcell>
+                        <textbox autoskip="true" block="GWBESAC" case="upper" datatype="String" height="22px" keyactions="NEXT_ITEM" label="Requested Degreeworks Access" maxlength="16" member="GWBESAC_DW_ACCESS" name="gwbesacDwAccess" style="ui-buttoninput" validation="server" width="75px"/>
                         <button action="WHEN-BUTTON-PRESSED" block="GWBESAC" height="23px" icon="search" member="GWBESAC_DW_ACCESS_LBT" name="gwbesacDwAccessLbt" navigable="false" style="ui-buttoninput" width="22px"/>
                         <text block="GWBESAC" datatype="String" height="22px" member="DW_ACCESS_DESC" width="150px"/>
                     </gridcell>

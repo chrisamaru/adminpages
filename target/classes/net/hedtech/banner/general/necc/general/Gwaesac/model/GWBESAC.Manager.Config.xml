@@ -27,11 +27,13 @@
 			</item>
 			<item name="DW_ACCESS_DESC" logicalName="dwAccessDesc" type="java.lang.String" virtual="true">
 			</item>
-			<item name="GWBESAC_STAFF_IND" logicalName="gwbesacStaffInd" type="String" physicalName="GWBESAC_STAFF_IND">
+			<item name="GWBESAC_STAFF_IND" logicalName="gwbesacStaffInd" type="java.lang.String" physicalName="GWBESAC_STAFF_IND">
 			</item>
-			<item name="GWBESAC_FACULTY_IND" logicalName="gwbesacFacultyInd" type="String" physicalName="GWBESAC_FACULTY_IND">
+			<item name="GWBESAC_FACULTY_IND" logicalName="gwbesacFacultyInd" type="java.lang.String" physicalName="GWBESAC_FACULTY_IND">
 			</item>
-			<item name="GWBESAC_ADVISOR_IND" logicalName="gwbesacAdvisorInd" type="String" physicalName="GWBESAC_ADVISOR_IND">
+			<item name="GWBESAC_ADVISOR_IND" logicalName="gwbesacAdvisorInd" type="java.lang.String" physicalName="GWBESAC_ADVISOR_IND">
+			</item>
+			<item name="CURRENT_DW_ACCESS" logicalName="currentDwAccess" type="String" virtual="true">
 			</item>
 		</items>
 		

@@ -45,6 +45,7 @@
                 <Item Id="ADVISOR_IND_Y" Type="RadioButton"/>
                 <Item Id="ADVISOR_IND_N" Type="RadioButton"/>
             </Item>
+            <Item CanvasName="MAIN_CANVAS" Id="CURRENT_DW_ACCESS" Type="TextItem"/>
             <Item CanvasName="MAIN_CANVAS" Id="GWBESAC_DW_ACCESS" Lov="LOV_GWVDWRL_RG" Type="TextItem"/>
             <Item CanvasName="MAIN_CANVAS" Id="GWBESAC_DW_ACCESS_LBT" Type="Button"/>
             <Item CanvasName="MAIN_CANVAS" Id="DW_ACCESS_DESC" Type="TextItem"/>
