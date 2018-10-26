@@ -9,6 +9,7 @@ import morphis.foundations.core.appdatalayer.data.ResultSet;
 import morphis.foundations.core.appsupportlib.exceptions.ApplicationException;
 import morphis.foundations.core.appsupportlib.runtime.ISupportCodeContainer;
 import morphis.foundations.core.appsupportlib.runtime.controlsModel.alerts.AlertDescriptor;
+import morphis.foundations.core.types.NDate;
 import morphis.foundations.core.types.NNumber;
 import morphis.foundations.core.types.NString;
 import morphis.common.forms.baseForm.services.DefaultSupportCodeObject;
@@ -18,10 +19,14 @@ import net.hedtech.general.common.dbservices.GNls;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.text.SimpleDateFormat;
 import java.util.*;
 import javax.mail.*;
 import javax.mail.Message.RecipientType;
 import javax.mail.internet.*;
+
+import org.joda.time.DateTime;
+
 import javax.activation.*;
 
 public class GwaesacServices extends DefaultSupportCodeObject {
@@ -166,14 +171,18 @@ public class GwaesacServices extends DefaultSupportCodeObject {
 
 
 			// Now set the actual message
+			SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+			Calendar cal = Calendar.getInstance();
+			cal.add(Calendar.DAY_OF_MONTH, 2);
+			String dueDate = sdf.format(cal.getTime());
 			String body = "";
 			if (ticketAction.equals(toStr("G"))) {
 				body = "@title=Degreeworks access request\r\n" + 
 						"@category=Degreeworks::Access Rights::" + requestedDwAccess + "\r\n" + 
 						"@submitter=" + subEmalAddress + "\r\n" + 
 						"@owner=mis@necc.mass.edu\r\n" + 
-						"@due_date=10/27/2018\r\n" + 
-						"\r\n" + 
+						"@due_date=" + dueDate + "\r\n" +
+						"\r\n" +
 						"Please grant/change Degreeworks access for the following employee:\r\n" +
 						"NECC ID: " + usrNeccId + "\r\n" +
 						"NAME: " + usrFullName + "\r\n" +
@@ -181,10 +190,10 @@ public class GwaesacServices extends DefaultSupportCodeObject {
 			}
 			if (ticketAction.equals(toStr("R"))) {
 				body = "@title=Degreeworks access request\r\n" + 
-						"@category=Degreeworks::Access Rights::" + requestedDwAccess + "\r\n" + 
+						"@category=Degreeworks::Other\r\n" + 
 						"@submitter=" + subEmalAddress + "\r\n" + 
 						"@owner=mis@necc.mass.edu\r\n" + 
-						"@due_date=10/27/2018\r\n" + 
+						"@due_date=" + dueDate + "\r\n" +
 						"\r\n" + 
 						"Please revoke Degreeworks access for the following employee:\r\n" +
 						"NECC ID: " + usrNeccId + "\r\n" +

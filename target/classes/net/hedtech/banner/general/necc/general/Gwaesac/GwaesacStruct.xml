@@ -49,8 +49,14 @@
             <Item CanvasName="MAIN_CANVAS" Id="GWBESAC_DW_ACCESS" Lov="LOV_GWVDWRL_RG" Type="TextItem"/>
             <Item CanvasName="MAIN_CANVAS" Id="GWBESAC_DW_ACCESS_LBT" Type="Button"/>
             <Item CanvasName="MAIN_CANVAS" Id="DW_ACCESS_DESC" Type="TextItem"/>
-            <Item CanvasName="MAIN_CANVAS" Id="GWBESAC_DW_ENABLED_IND" Type="TextItem"/>
-            <Item CanvasName="MAIN_CANVAS" Id="GWBESAC_EAB_ENABLED_IND" Type="TextItem"/>
+            <Item CanvasName="MAIN_CANVAS" Id="GWBESAC_DW_ENABLED_IND" Type="RadioGroup">
+                <Item Id="DW_ENABLED_IND_Y" Type="RadioButton"/>
+                <Item Id="DW_ENABLED_IND_N" Type="RadioButton"/>
+            </Item>
+            <Item CanvasName="MAIN_CANVAS" Id="GWBESAC_EAB_ENABLED_IND" Type="RadioGroup">
+                <Item Id="EAB_ENABLED_IND_Y" Type="RadioButton"/>
+                <Item Id="EAB_ENABLED_IND_N" Type="RadioButton"/>
+            </Item>
             <Item CanvasName="MAIN_CANVAS" Enabled="false" Id="GWBESAC_ACTIVITY_DATE" Type="TextItem"/>
             <Item CanvasName="MAIN_CANVAS" Enabled="false" Id="GWBESAC_USER" Type="TextItem"/>
         </Block>

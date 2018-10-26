@@ -325,43 +325,46 @@ public class GwaesacFormController extends DefaultFormController {
 		}
 	}
 
-//	@ActionTrigger(action = "POST-TEXT-ITEM", item = "GWBESAC_DW_ACCESS", function = KeyFunction.ITEM_OUT)
-//	public void gwbesacDwAccess_itemOut() {
-//		GwbesacAdapter gwbesacElement = (GwbesacAdapter) this.getFormModel().getGwbesac().getRowAdapter(true);
-//		if (gwbesacElement.getGwbesacDwAccess().isNull()) {
-//			gwbesacElement.setDwAccessDesc(toStr(""));
-//		} else {
-//			getTask().getGoqrpls().getGSearch().postTextCode();
-//			getTask().getGoqrpls().gCheckFailure();
-//		}
-//	}
+	// @ActionTrigger(action = "POST-TEXT-ITEM", item = "GWBESAC_DW_ACCESS",
+	// function = KeyFunction.ITEM_OUT)
+	// public void gwbesacDwAccess_itemOut() {
+	// GwbesacAdapter gwbesacElement = (GwbesacAdapter)
+	// this.getFormModel().getGwbesac().getRowAdapter(true);
+	// if (gwbesacElement.getGwbesacDwAccess().isNull()) {
+	// gwbesacElement.setDwAccessDesc(toStr(""));
+	// } else {
+	// getTask().getGoqrpls().getGSearch().postTextCode();
+	// getTask().getGoqrpls().gCheckFailure();
+	// }
+	// }
 
-//	@ActionTrigger(action = "POST-CHANGE", item = "GWBESAC_DW_ACCESS")
-//	public void gwbesacDwAccess_PostChange() {
-//
-//		GwbesacAdapter gwbesacElement = (GwbesacAdapter) this.getFormModel().getGwbesac().getRowAdapter(true);
-//		String gwvdwrlC = "select dwrl.GWVDWRL_DESC\r\n" + "from gwvdwrl dwrl\r\n"
-//				+ "where dwrl.GWVDWRL_CODE = :DW_ACCESS";
-//		NString dwAccessDesc = NString.getNull();
-//		DataCursor gwvdwrlCursor = new DataCursor(gwvdwrlC);
-//		try {
-//			// Setting query parameters
-//			gwvdwrlCursor.addParameter("DW_ACCESS", gwbesacElement.getGwbesacDwAccess());
-//			gwvdwrlCursor.open();
-//			ResultSet gwvdwrlCResults = gwvdwrlCursor.fetchInto();
-//			if (gwvdwrlCResults != null) {
-//				dwAccessDesc = gwvdwrlCResults.getStr(0);
-//				gwbesacElement.setDwAccessDesc(dwAccessDesc);
-//			} else {
-//				errorMessage(GNls.Fget(toStr("GWAESAC-0002"), toStr("FORM"),
-//						toStr("*ERROR* Invalid Degreeworks Access; press LIST for valid codes.")));
-//				throw new ApplicationException();
-//			}
-//		} finally {
-//			gwvdwrlCursor.close();
-//		}
-//
-//	}
+	// @ActionTrigger(action = "POST-CHANGE", item = "GWBESAC_DW_ACCESS")
+	// public void gwbesacDwAccess_PostChange() {
+	//
+	// GwbesacAdapter gwbesacElement = (GwbesacAdapter)
+	// this.getFormModel().getGwbesac().getRowAdapter(true);
+	// String gwvdwrlC = "select dwrl.GWVDWRL_DESC\r\n" + "from gwvdwrl dwrl\r\n"
+	// + "where dwrl.GWVDWRL_CODE = :DW_ACCESS";
+	// NString dwAccessDesc = NString.getNull();
+	// DataCursor gwvdwrlCursor = new DataCursor(gwvdwrlC);
+	// try {
+	// // Setting query parameters
+	// gwvdwrlCursor.addParameter("DW_ACCESS", gwbesacElement.getGwbesacDwAccess());
+	// gwvdwrlCursor.open();
+	// ResultSet gwvdwrlCResults = gwvdwrlCursor.fetchInto();
+	// if (gwvdwrlCResults != null) {
+	// dwAccessDesc = gwvdwrlCResults.getStr(0);
+	// gwbesacElement.setDwAccessDesc(dwAccessDesc);
+	// } else {
+	// errorMessage(GNls.Fget(toStr("GWAESAC-0002"), toStr("FORM"),
+	// toStr("*ERROR* Invalid Degreeworks Access; press LIST for valid codes.")));
+	// throw new ApplicationException();
+	// }
+	// } finally {
+	// gwvdwrlCursor.close();
+	// }
+	//
+	// }
 
 	@ActionTrigger(action = "WHEN-MOUSE-CLICK", item = "GWBESAC_DW_ACCESS_LBT")
 	public void gwbesacDwAccess_Lbt_click() {
@@ -407,28 +410,50 @@ public class GwaesacFormController extends DefaultFormController {
 
 	@AfterDatabaseCommit
 	public void gwaesac_AfterDatabaseCommit(EventObject eventObject) {
-		GwbesacAdapter gwbesacElement = (GwbesacAdapter) this.getFormModel().getGwbesac().getRowAdapter(true);
-		NString currentDwAccess = getTask().getServices().getCurrentDwAccess();
-		NString dwEnabledInd = gwbesacElement.getGwbesacDwEnabledInd();
-		NString requestedDwAccess = gwbesacElement.getGwbesacDwAccess();
 		NNumber pidm = getFormModel().getKeyBlock().getPidm();
-		
-		// If Degreeworks is enabled
-		// Open a ticket in KACE to request access only if current Degreeworks access is different from requested Degreeworks access
-		if (dwEnabledInd.equals("Y")) {
-			// Degreeworks is enabled
-			if (currentDwAccess.notEquals(requestedDwAccess)) {
-				// Open the ticket and pop an alert with the ticket # (?) telling the user that a ticket has been opened
-				if (getTask().getServices().openTicket(pidm, toStr("G"), requestedDwAccess)) {
-					getTask().getServices().showTicketAlert(toStr("A ticket has been opened to give the user Degreeworks access. Please allow 1-2 business days for this to be process."));
+		// Check to see if a record exists
+		try {
+			// There is still a row
+			GwbesacAdapter gwbesacElement = (GwbesacAdapter) this.getFormModel().getGwbesac().getRowAdapter(true);
+			NString currentDwAccess = getTask().getServices().getCurrentDwAccess();
+			NString dwEnabledInd = gwbesacElement.getGwbesacDwEnabledInd();
+			NString requestedDwAccess = gwbesacElement.getGwbesacDwAccess();
+
+			// If Degreeworks is enabled
+			// Open a ticket in KACE to request access only if current Degreeworks access is
+			// different from requested Degreeworks access
+			if (dwEnabledInd.equals("Y")) {
+				// Degreeworks is enabled
+				if (currentDwAccess.notEquals(requestedDwAccess)) {
+					// Open the ticket and pop an alert with the ticket # (?) telling the user that
+					// a ticket has been opened
+					if (getTask().getServices().openTicket(pidm, toStr("G"), requestedDwAccess)) {
+						getTask().getServices().showTicketAlert(toStr(
+								"A ticket has been opened to give the user Degreeworks access. Please allow 1-2 business days for this to be process."));
+					}
+				}
+			} else {
+				// Degreeworks is not enabled, so open a ticket to revoke the user's access
+				// pop an alert saying that a ticket has been opened to revoke the user's access
+				// to Degreeworks
+				// first check to see if the user has Degreeworks access in the first place
+				if (currentDwAccess.notEquals(toStr("NONE"))) {
+					if (getTask().getServices().openTicket(pidm, toStr("R"), null)) {
+						getTask().getServices().showTicketAlert(toStr(
+								"A ticket has been opened to revoke the user's Degreeworks access. Please allow 1-2 business days for this to be process."));
+					}
 				}
 			}
-		} else {
-			// Degreeworks is not enabled, so open a ticket to revoke the user's access
-			// pop an alert saying that a ticket has been opened to revoke the user's access to Degreeworks
-			if (getTask().getServices().openTicket(pidm, toStr("R"), null)) {
-				getTask().getServices().showTicketAlert(toStr("A ticket has been opened to revoke the user's Degreeworks access. Please allow 1-2 business days for this to be process."));
+		} catch (Exception e) {
+			// The row has been deleted. Revoke Degreeworks access if the user has it
+			NString currentDwAccess = getTask().getServices().getCurrentDwAccess();
+			if (currentDwAccess.isNotNull()) {
+				if (getTask().getServices().openTicket(pidm, toStr("R"), null)) {
+					getTask().getServices().showTicketAlert(toStr(
+							"A ticket has been opened to revoke the user's Degreeworks access. Please allow 1-2 business days for this to be process."));
+				}
 			}
 		}
+
 	}
 }

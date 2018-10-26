@@ -156,4 +156,59 @@ public class GwbesacController extends DefaultBlockController {
 		gwbesacElement.setGwbesacUser(getGlobal("CURRENT_USER"));
 	}
 
+	@RecordCreated
+	public void gwbesac_RecordCreated(EventObject eventObject) {
+		GwbesacAdapter gwbesacElement = (GwbesacAdapter) this.getFormModel().getGwbesac().getRowAdapter(true);
+
+		// Retrieve the data from SPRIDEN
+		String spridenC = "select iden.SPRIDEN_ID, f_format_name(iden.spriden_pidm, 'LFMI')\r\n"
+				+ "from spriden iden\r\n" + "where iden.SPRIDEN_PIDM = :KEY_BLOCK_PIDM\r\n"
+				+ "and iden.SPRIDEN_CHANGE_IND IS NULL";
+		DataCursor spridenCursor = new DataCursor(spridenC);
+		NString id = NString.getNull();
+		NString fullName = NString.getNull();
+		try {
+			// Setting query parameters
+			spridenCursor.addParameter("KEY_BLOCK_PIDM", getFormModel().getKeyBlock().getPidm());
+			spridenCursor.open();
+			ResultSet spridenCResults = spridenCursor.fetchInto();
+			if (spridenCResults != null) {
+				id = spridenCResults.getStr(0);
+				fullName = spridenCResults.getStr(1);
+				gwbesacElement.setNeccId(id);
+				gwbesacElement.setFullName(fullName);
+			}
+		} finally {
+			spridenCursor.close();
+		}
+
+		// Retrieve the data from SIRASGN
+		String sirasgnC = "SELECT NVL(inst.SIBINST_ADVR_IND, 'N'),\r\n" + "       NVL(inst.SIBINST_SCHD_IND, 'N')\r\n"
+				+ "  FROM sibinst inst\r\n" + " WHERE     inst.SIBINST_PIDM = :KEY_BLOCK_PIDM\r\n"
+				+ "       AND inst.SIBINST_TERM_CODE_EFF =\r\n"
+				+ "           (SELECT MAX (ins1.SIBINST_TERM_CODE_EFF)\r\n" + "              FROM sibinst ins1\r\n"
+				+ "             WHERE ins1.SIBINST_PIDM = inst.SIBINST_PIDM)";
+		DataCursor sirasgnCursor = new DataCursor(sirasgnC);
+		NString advisorInd = NString.getNull();
+		NString facultyInd = NString.getNull();
+		try {
+			// Setting query parameters
+			sirasgnCursor.addParameter("KEY_BLOCK_PIDM", getFormModel().getKeyBlock().getPidm());
+			sirasgnCursor.open();
+			ResultSet sirasgnCResults = sirasgnCursor.fetchInto();
+			if (sirasgnCResults != null) {
+				advisorInd = sirasgnCResults.getStr(0);
+				facultyInd = sirasgnCResults.getStr(1);
+				if (gwbesacElement.getGwbesacAdvisorInd().isNull()) {
+					gwbesacElement.setGwbesacAdvisorInd(advisorInd);
+				}
+				if (gwbesacElement.getGwbesacFacultyInd().isNull()) {
+					gwbesacElement.setGwbesacFacultyInd(facultyInd);
+				}
+			}
+		} finally {
+			sirasgnCursor.close();
+		}
+	}
+
 }
