@@ -419,60 +419,16 @@ public class GwaesacFormController extends DefaultFormController {
 			// Degreeworks is enabled
 			if (currentDwAccess.notEquals(requestedDwAccess)) {
 				// Open the ticket and pop an alert with the ticket # (?) telling the user that a ticket has been opened
-				getTask().getServices().openTicket(pidm, toStr("G"), requestedDwAccess);
-				getTask().getServices().showTicketAlert(toStr("A ticket has been opened to give the user Degreeworks access. Please allow 1-2 business days for this to be process."));
+				if (getTask().getServices().openTicket(pidm, toStr("G"), requestedDwAccess)) {
+					getTask().getServices().showTicketAlert(toStr("A ticket has been opened to give the user Degreeworks access. Please allow 1-2 business days for this to be process."));
+				}
 			}
 		} else {
 			// Degreeworks is not enabled, so open a ticket to revoke the user's access
 			// pop an alert saying that a ticket has been opened to revoke the user's access to Degreeworks
-			getTask().getServices().openTicket(pidm, toStr("R"), null);
-			getTask().getServices().showTicketAlert(toStr("A ticket has been opened to revoke the user's Degreeworks access. Please allow 1-2 business days for this to be process."));
+			if (getTask().getServices().openTicket(pidm, toStr("R"), null)) {
+				getTask().getServices().showTicketAlert(toStr("A ticket has been opened to revoke the user's Degreeworks access. Please allow 1-2 business days for this to be process."));
+			}
 		}
 	}
-
-//	@ValidationTrigger(item = "GWBESAC_EAB_ENABLED_IND")
-//	public void gwbesacEabEnabledInd_validation() {
-//		GwbesacAdapter gwbesacElement = (GwbesacAdapter) this.getFormModel().getGwbesac().getRowAdapter(true);
-//
-//		if (gwbesacElement == null)
-//			return;
-//
-//		NString eabEnabledInd = gwbesacElement.getGwbesacEabEnabledInd();
-//		if (!(eabEnabledInd.equals("Y") || eabEnabledInd.equals("N"))) {
-//				errorMessage(GNls.Fget(toStr("GWAESAC-0003"), toStr("FORM"),
-//						toStr("*ERROR* EAB Enabled Indicator must be Y or N.")));
-//				throw new ApplicationException();
-//		}
-//	}
-
-//	@ValidationTrigger(item = "GWBESAC_DW_ENABLED_IND")
-//	public void gwbesacDwEnabledInd_validation() {
-//		GwbesacAdapter gwbesacElement = (GwbesacAdapter) this.getFormModel().getGwbesac().getRowAdapter(true);
-//
-//		if (gwbesacElement == null)
-//			return;
-//
-//		NString dwEnabledInd = gwbesacElement.getGwbesacDwEnabledInd();
-//		if (!(dwEnabledInd.equals("Y") || dwEnabledInd.equals("N"))) {
-//				errorMessage(GNls.Fget(toStr("GWAESAC-0004"), toStr("FORM"),
-//						toStr("*ERROR* Degreeworks Enabled Indicator must be Y or N.")));
-//				throw new ApplicationException();
-//		}
-//	}
-
-//	@ValidationTrigger(item = "GWBESAC_STAFF_IND")
-//	public void gwbesacStaffInd_validation() {
-//		GwbesacAdapter gwbesacElement = (GwbesacAdapter) this.getFormModel().getGwbesac().getRowAdapter(true);
-//
-//		if (gwbesacElement == null)
-//			return;
-//
-//		NString staffInd = gwbesacElement.getGwbesacStaffInd();
-//		if (!(staffInd.equals("Y") || staffInd.equals("N"))) {
-//				errorMessage(GNls.Fget(toStr("GWAESAC-0005"), toStr("FORM"),
-//						toStr("*ERROR* Staff Indicator must be Y or N.")));
-//				throw new ApplicationException();
-//		}
-//	}
-
 }
